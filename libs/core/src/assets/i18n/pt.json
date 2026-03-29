@@ -1,0 +1,679 @@
+{
+  "COMMON":
+  {
+    "NOT_FOUND":
+    {
+      "ROUTER": "Não Encontrado",
+      "TITLE": "Ups! Página não encontrada",
+      "MESSAGE": "A página que procuras pode ter sido removida ou está temporariamente indisponível."
+    },
+    "SERVER_UNAVAILABLE":
+    {
+      "ROUTER": "Servidor Indisponível",
+      "TITLE": "Serviço temporariamente indisponível",
+      "MESSAGE": "Estamos com dificuldades técnicas. Por favor, tente mais tarde."
+    },
+    "DATE_PICKER":
+    {
+      "TODAY": "Hoje",
+      "CLEAR": "Limpar",
+      "DATE_FORMAT": "dd/mm/aa",
+      "WEEK_HEADER": "Sem",
+      "DAY_NAMES":
+      {
+        "FULL":
+        {
+          "SUNDAY": "Domingo",
+          "MONDAY": "Segunda-feira",
+          "TUESDAY": "Terça-feira",
+          "WEDNESDAY": "Quarta-feira",
+          "THURSDAY": "Quinta-feira",
+          "FRIDAY": "Sexta-feira",
+          "SATURDAY": "Sábado"
+        },
+        "SHORT":
+        {
+          "SUNDAY": "Dom",
+          "MONDAY": "Seg",
+          "TUESDAY": "Ter",
+          "WEDNESDAY": "Qua",
+          "THURSDAY": "Qui",
+          "FRIDAY": "Sex",
+          "SATURDAY": "Sáb"
+        },
+        "MIN":
+        {
+          "SUNDAY": "Do",
+          "MONDAY": "Sg",
+          "TUESDAY": "Te",
+          "WEDNESDAY": "Qa",
+          "THURSDAY": "Qi",
+          "FRIDAY": "Sx",
+          "SATURDAY": "Sb"
+        }
+      },
+      "MONTH_NAMES":
+      {
+        "FULL":
+        {
+          "JANUARY": "Janeiro",
+          "FEBRUARY": "Fevereiro",
+          "MARCH": "Março",
+          "APRIL": "Abril",
+          "MAY": "Maio",
+          "JUNE": "Junho",
+          "JULY": "Julho",
+          "AUGUST": "Agosto",
+          "SEPTEMBER": "Setembro",
+          "OCTOBER": "Outubro",
+          "NOVEMBER": "Novembro",
+          "DECEMBER": "Dezembro"
+        },
+        "SHORT":
+        {
+          "JANUARY": "Jan",
+          "FEBRUARY": "Fev",
+          "MARCH": "Mar",
+          "APRIL": "Abr",
+          "MAY": "Mai",
+          "JUNE": "Jun",
+          "JULY": "Jul",
+          "AUGUST": "Ago",
+          "SEPTEMBER": "Set",
+          "OCTOBER": "Out",
+          "NOVEMBER": "Nov",
+          "DECEMBER": "Dez"
+        }
+      }
+    },
+    "CARD":
+    {
+      "COMPARED_TO_YESTERDAY": "vs ontem",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "vs anteontem",
+
+      "COMPARED_TO_LAST_MONTH": "vs mês passado",
+
+      "COMPARED_TO_LAST_WEEK": "vs semana passada",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "vs semana retrasada",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "vs mês retrasado",
+      "COMPARED_TO_LAST": "vs anterior",
+
+      "LAST_UPDATED": "última actualização"
+    },
+    "FORM": {
+      "SEARCH": "Pesquisar"
+    },
+    "TABLE": {
+      "HEADER": {
+        "ACTIONS": "Ações",
+        "DESIGNATION": "Designação",
+        "STATUS": "Estado",
+        "DATE": "Data"
+      },
+      "BODY": {
+        "EMPTY_DATA": "Sem registos..."
+      },
+      "FOOTER": {
+        "SHOWING": "A mostrar",
+        "TO": "a",
+        "OF": "de",
+        "ENTRIES": "registos"
+      }
+    },
+    "GENDER":
+    {
+      "FEMALE": "Feminino",
+      "MALE": "Masculino"
+    },
+    "CHART":
+    {
+      "EXPENSES": "Saídas",
+      "REVENUE": "Entradas"
+    },
+    "ACTIONS":
+    {
+      "CANCEL": "Cancelar",
+      "CLEAR": "Limpar",
+      "CONFIRM": "Confirmar",
+      "DELETE": "Apagar",
+      "EDIT": "Editar",
+      "SAVE": "Guardar",
+      "UPDATE": "Actualizar",
+      "VIEW": "Ver Detalhes"
+    }
+  },
+
+
+
+  "LOGIN":
+  {
+    "ROUTER":
+    {
+      "LICENSE": "Licença",
+      "SIGN_IN": "Iniciar sessão",
+      "ADMIN": "Bem-vindo Admin"
+    },
+    "FOOTER": "Todos os direitos reservados.",
+    "SIGN_IN":
+    {
+      "TITLE": "Bem-vindo de volta!",
+      "SUBTITLE": "Por favor introduza as suas credenciais para aceder à sua conta.",
+      "USERNAME": "Nome de utilizador",
+      "PASSWORD": "Palavra-passe",
+      "BTN": "Iniciar sessão",
+      "ERROR":
+      {
+        "TITLE": "Nome de utilizador ou palavra-passe incorrectos.",
+        "USERNAME": "Digite o seu nome de utilizador",
+        "PASSWORD": "Digite a sua palavra-passe"
+      }
+    }
+  },
+
+
+
+  "ADMIN":
+  {
+    "ROUTER":
+    {
+      "DASHBOARD": "Painel Geral · Admin",
+      "POS": "PDV · Admin",
+      "CASH_REGISTER": "Controlo de Caixa · Admin",
+      "SALES": "Controlo de Vendas · Admin",
+      "STOCK": "Gestão de Stock · Admin",
+      "ITEMS": "Gestão de Itens · Admin",
+      "PEOPLE": {
+        "CUSTOMERS": "Gestão de Pessoas · Clients · Admin",
+        "SUPPLIERS": "Gestão de Pessoas · Fornecedores · Admin",
+        "USERS": "Gestão de Pessoas · Utilizadores · Admin"
+      },
+      "FINANCIAL": {
+        "ACCOUNTS_PAYABLE": "Gestão Financeira · Contas a Pagar · Admin",
+        "ACCOUNTS_RECEIVABLE": "Gestão Financeira · Contas a Receber · Admin",
+        "ACCOUNTS_BALANCE": "Gestão Financeira · Saldo das Contas · Admin",
+        "CASH_FLOW": "Gestão Financeira · Fluxo de Caixa · Admin",
+        "RECEIPTS": "Gestão Financeira · Recibos · Admin",
+        "REPORTS": "Gestão Financeira · Relatório · Admin"
+      },
+      "SETTINGS": {
+        "PROFILE": "Configurações · Perfil · Admin",
+        "NOTIFICATIONS": "Configurações · Notificações · Admin",
+        "SECURITY": "Configurações · Segurança · Admin",
+        "APPARENCE": "Configurações · Aparência · Admin",
+        "PAYMENT_METHOD": "Configurações · Métodos de Pagamentos · Admin",
+        "OTHERS": "Configurações · Outras · Admin",
+        "LICENSE": "Configurações · Licença · Admin"
+      }
+    },
+    "NAVBAR":
+    {
+      "OPEN_MENU": "Abrir menu",
+      "CLOSE_MENU": "Fechar menu",
+      "ENTER_FULL_SCREEN": "Ativar tela cheia",
+      "EXIT_FULL_SCREEN": "Sair tela cheia",
+      "NOTIFICATIONS": "Notificações"
+    },
+    "SIDEBAR":
+    {
+      "DASHBOARD": "Painel Geral",
+      "POS":
+      {
+        "ABREV": "PDV",
+        "TITLE": "Ponto de Venda"
+      },
+      "CASH_REGISTER": "Controlo de Caixa",
+      "SALES": "Controlo de Vendas",
+      "STOCK": "Gestão de Estoque",
+      "ITEMS": "Gestão de Itens",
+      "FINANCIAL": {
+        "TITLE": "Gestão Financeira",
+        "ACCOUNTS_PAYABLE": "Contas a Pagar",
+        "ACCOUNTS_RECEIVABLE": "Contas a Receber",
+        "ACCOUNTS_BALANCE": "Saldo das Contas",
+        "CASH_FLOW": "Fluxo de Caixa",
+        "RECEIPTS": "Recibos",
+        "REPORTS": "Relatório",
+        "ABREV":
+        {
+          "ACCOUNTS_PAYABLE": "CP",
+          "ACCOUNTS_RECEIVABLE": "CR",
+          "ACCOUNTS_BALANCE": "SC",
+          "CASH_FLOW": "FC",
+          "RECEIPTS": "R",
+          "REPORTS": "R"
+        }
+      },
+      "PEOPLE": {
+        "TITLE": "Gestão de Pessoas",
+        "CUSTOMERS": "Clientes",
+        "SUPPLIERS": "Fornecedores",
+        "USERS": "Utilizadores",
+        "ABREV":
+        {
+          "CUSTOMERS": "C",
+          "SUPPLIERS": "F",
+          "USERS": "U"
+        }
+      },
+      "SETTINGS": "Configurações",
+      "SIGN_OUT": "Terminar sessão",
+      "FOOTER": "© 2026 · Todos os direitos reservados."
+    },
+    "CENTRE":
+    {
+      "POS": {
+        "LEFT": {
+          "RECEIPT_NR": "RECIBO Nº",
+          "PAYMENT": {
+            "QTY":"Qtd. total",
+            "TOTAL_TO_PAY": "Total a Pagar",
+            "BTN": {
+              "PAY_NOW": "Pagar Agora",
+              "PAY_AFTER": "Pagar Depois",
+              "CANCEL": "Cancelar"
+            }
+          },
+          "VAT": "IVA incluído",
+          "PANEL_MENU": {
+            "CASH_REGISTER": {
+              "TITLE": "Caixa",
+              "CLOSE": "Fechar",
+              "CASH_IN": "Reforçar Caixa",
+              "CASH_OUT": "Retirar DO Caixa",
+              "RESUME": "Resumo do Caixa"
+            },
+            "CUSTOMER": {
+              "TITLE": "Clientes",
+              "NEW": "Novo Cliente",
+              "SEARCH": "Consultar Cliente"
+            },
+            "ITEMS": {
+              "TITLE": "Itens",
+              "ADD_WAREHOUSE": "Adicionar Item do Armazém",
+              "ADD_NOT_REGISTERED": "Adicionar Item Não Registado",
+              "SEARCH": "Consultar Item / Preço"
+            },
+            "SALES": {
+              "TITLE": "Vendas",
+              "SUCCESS": "Vendas Finalizadas",
+              "PENDING": "Vendas em Espera",
+              "CANCELLED": "Vendas Canceladas"
+            },
+            "PRINT_RECEIPT": "Reimprimir Recibo"
+          }
+        },
+        "RIGHT": {
+          "SEARCH": "Pesquisar por nome ou código de barra",
+          "TABLE.HEADER": {
+            "QTY": "Qtd.",
+            "UNIT_PRICE": "Preço Unit.(MT)",
+            "TOTAL": "Total(MT)"
+          }
+        }
+      },
+      "CASH_REGISTER": {
+        "INFO": "Acompanhe o movimento do caixa em tempo real",
+        "BTN": {
+          "OPEN": "Abrir",
+          "CLOSE": "Fechar",
+          "CASH_IN": "Reforçar",
+          "CASH_OUT": "Retirar"
+        },
+        "CARD": {
+          "INITIAL_BALANCE": "Saldo Inicial",
+          "CASH_IN": "Reforço de Caixa",
+          "CASH_OUT": "Saídas do Caixa",
+          "EXPECTED_BALANCE": "Saldo Esperado"
+        },
+        "TABLE.HEADER": {
+          "OPERATOR": "Operador",
+          "STATUS": "Estado",
+          "TOTAL_OPENED": "Total Aberto(MT)",
+          "TOTAL_CLOSED": "Total Fechado(MT)",
+          "OPENED_AT": "Aberto às",
+          "CLOSED_AT": "Fechado às"
+        }
+      },
+      "SALES": {
+        "TITLE": "Controlo de Vendas",
+        "TABLIST": {
+          "OVERVIEW": "Visão Geral por Item",
+          "SUCCESS": "Vendas Finalizadas",
+          "PENDING": "Vendas em Espera",
+          "CANCELLED": "Vendas Canceladas"
+        },
+        "TABLE.HEADER": {
+          "OVERVIEW": {
+            "QTY_SOLD": "Qtd. Vendida",
+            "TOTAL_SOLD": "Total Vendido(MT)",
+            "LAST_SOLD": "Última Venda"
+          },
+          "CUSTOMER": "Cliente",
+          "QTY": "Qtd.",
+          "TOTAL": "Total(MT)"
+        }
+      },
+      "STOCK": {
+        "TITLE": "Gestão de Estoque",
+        "INFO": "Gerencie seus estoques",
+        "BTN": "Novo Estoque",
+        "CARD": {
+          "WAREHOUSE": "Armazém",
+          "STORE": "Loja",
+          "DUE_SOON": "A Vencer",
+          "OVERDUE": "Vencido(s)",
+          "QTY": "Qtd. total",
+          "AMOUNT": "Pr. venda total"
+        },
+        "TABLIST": {
+          "STATISTIC": "Estatística",
+          "EXPIRATION": "Controlo de Validade"
+        },
+        "TABLE.HEADER": {
+          "STATISTIC": {
+            "UNIT": {
+              "TITLE": "Preço Unitário",
+              "BUY": "Compra(MT)",
+              "SALE": "Venda(MT)"
+            },
+            "PROFIT": "Lucro Unitário",
+            "QTY": "Qtd.",
+            "QTY_WAREHOUSE": "Armazém",
+            "QTY_STORE": "Loja",
+            "TOTAL": "Total",
+            "TOTAL_BUY": "Compra(MT)",
+            "TOTAL_SALE": "Venda(MT)",
+            "TOTAL_PROFIT": "Lucro(MT)"
+          },
+          "EXPIRATION": {
+            "BAR_CODE": "Cód. Barra",
+            "LOCATION": "Localização",
+            "STATUS": "Estado"
+          }
+        }
+      },
+      "ITEMS": {
+        "INFO": "Gerencie seus itens",
+        "BTN": "Novo Item",
+        "TABLE.HEADER": {
+          "COMMERCIAL_NAME": "Nome Comercial",
+          "ACTIVE_PRINCIPLE":  "Princípio Activo",
+          "PHARMACEUTICAL_FORM": "Forma Farmacêutica",
+          "CATEGORY": "Categoria"
+        }
+      },
+      "FINANCIAL":
+      {
+        "ACC_PAYABLE":
+        {
+          "TOP_INFO":
+          {
+            "INFO": "Gerir todas as saídas e obrigações financeiras da farmácia",
+            "BTN": "Nova Conta"
+          },
+          "CARD":
+          {
+            "TO_PAY": "A Pagar",
+            "DUE_SOON": "A Vencer",
+            "OVERDUE": "Em Atraso",
+            "PAID": "Pagas (Este Mês)",
+            "QTY": "Qtd.",
+            "AMOUNT": "Valor"
+          },
+          "TABLE.HEADER":
+          {
+            "NAME": "Credor",
+            "DESCRIPTION": "Descrição",
+            "AMOUNT": "Valor (MT)"
+          }
+        },
+        "ACC_RECEIVABLE":
+        {
+          "TOP_INFO":
+          {
+            "INFO": "Gerir todas as transações pendentes e recebimentos da farmácia",
+            "BTN": "Nova Conta"
+          },
+          "CARD":
+          {
+            "TO_RECEIVE": "A Receber",
+            "DUE_SOON": "A Vencer",
+            "OVERDUE": "Em Atraso",
+            "RECEIVED": "Recebido (Este Mês)",
+            "QTY": "Qtd.",
+            "AMOUNT": "Valor"
+          },
+          "TABLE.HEADER":
+          {
+            "NAME": "Devedor",
+            "DESCRIPTION": "Descrição",
+            "AMOUNT": "Valor (MT)"
+          }
+        },
+        "ACC_BALANCE":
+        {
+          "TOP_INFO": "Transparência e controlo financeiro",
+          "BTN_TRANSFER_FUNDS": "Transferir Fundos",
+          "TRANSFER_HISTORY": "Histórico de Transferências",
+          "CARD":
+          {
+            "TOTAL_BALANCE": "Soma dos saldos",
+            "BANK_ACCOUNT": "Conta Bancária",
+            "MOBILE_ACCOUNT": "Conta Móvel",
+            "INTERNAL_CASH": "Caixa Interna",
+            "AVAILABLE_BALANCE": "Saldo Disponível",
+            "TOTAL": "Total",
+            "CASH": "Numerário"
+          },
+          "TABLE_HEADER":
+          {
+            "ORIGIN": "Origem",
+            "DESTINATION": "Destino",
+            "AMOUNT": "Valor (MT)",
+            "TRANSACTION_FEE": "Taxa (MT)"
+          },
+          "DIALOG":
+          {
+            "TITLE_FUNDS_TRANSFER": "Transferência de Fundos",
+            "INFO_FUNDS_TRANSFER": "Introduza os dados para efectuar a transferência de fundos. Verifique as informações antes de confirmar.",
+            "LABEL":
+            {
+              "ORIGIN": "Origem",
+              "DESTINATION": "Destino",
+              "AMOUNT": "Valor",
+              "TRANSACTION_FEE": "Taxa"
+            },
+            "ERROR":
+            {
+              "ORIGIN": "Seleccione a conta de origem.",
+              "DESTINATION": "Seleccione a conta de destino.",
+              "AMOUNT": "Introduza o valor que pretende transferir.",
+              "TRANSACTION_FEE": "Introduza a taxa da transacção."
+            }
+          }
+        },
+        "RECEIPTS":
+        {
+          "TABLE.HEADER":
+          {
+            "CUSTOMER": "Cliente",
+            "QTY": "Qtd.",
+            "TOTAL": "Total(MT)"
+          }
+        }
+      },
+      "PEOPLE": {
+        "CARD": {
+          "TOTAL_AMOUNT": "Qtd. Total de Compras",
+          "UPDATE_AT": "Última Compra"
+        },
+        "CUSTOMERS": {
+          "INFO": "Gerencie seus clientes",
+          "BTN": "Novo Cliente"
+        },
+        "SUPPLIERS": {
+          "INFO": "Gerencie seus fornecedores",
+          "BTN": "Novo Fornecedor"
+        },
+        "USERS": {
+          "CARD": {
+            "USERNAME": "Utilizador",
+            "ROLE": {
+              "TITLE": "Nível de acesso",
+              "ADMIN": "Administrador",
+              "OPERATOR": "Operador de Caixa"
+            },
+            "STATUS": {
+              "TITLE": "Estado",
+              "ACTIVE": "Activo",
+              "INACTIVE": "Inactivo"
+            },
+            "UPDATE_AT": "Última actualização",
+            "CREATED_AT": "Data de Emissão"
+          }
+        }
+      },
+      "SETTINGS":
+      {
+        "PROFILE": {
+          "TITLE": "Meu Perfil",
+          "FULL_NAME": "Nome Completo",
+          "USERNAME": "Utilizador",
+          "ROLE": {
+            "TITLE": "Nível de acesso",
+            "ADMIN": "Administrador",
+            "OPERATOR": "Operador de Caixa"
+          },
+          "STATUS": {
+            "TITLE": "Estado",
+            "ACTIVE": "Activo",
+            "INACTIVE": "Inactivo"
+          },
+          "CREATED_AT": "Data de Emissão"
+        },
+        "NOTIFICATIONS": {
+          "TITLE": "Notificações",
+          "NOTF_1": {
+            "TITLE": "Alertas de Estoque Baixo",
+            "INFO": "Receber notificações quando produtos estiverem com estoque abaixo do mínimo."
+          },
+          "NOTF_2": {
+            "TITLE": "Novas Vendas",
+            "INFO": "Notificar sobre vendas realizadas no PDV."
+          },
+          "NOTF_3": {
+            "TITLE": "Produtos Vencidos",
+            "INFO": "Alertas sobre produtos que já se encontram vencidos."
+          },
+          "NOTF_4": {
+            "TITLE": "Produtos Próximos do Vencimento",
+            "INFO": "Alertas sobre produtos que estão prestes a vencer."
+          },
+          "NOTF_5": {
+            "TITLE": "Produtos em Falta",
+            "INFO": "Notificação quando algum produto estiver completamente sem estoque."
+          },
+          "NOTF_6": {
+            "TITLE": "Novo Cliente Cadastrado",
+            "INFO": "Receber notificação sempre que um novo cliente for registado."
+          },
+          "NOTF_7": {
+            "TITLE": "Alterações de Preço de Produtos",
+            "INFO": "Receber alertas quando preços de produtos forem actualizados."
+          },
+          "NOTF_8": {
+            "TITLE": "Erro no Sistema ou Servidor",
+            "INFO": "Aviso imediato em caso de falhas técnicas críticas."
+          }
+        },
+        "SECURITY": {
+          "TITLE": "Segurança",
+          "LABEL": {
+            "CURRENT": "Palavra-passe actual",
+            "NEW": "Nova palavra-passe",
+            "CONFIRM_NEW": "Confirmar nova palavra-passe"
+          },
+          "ERROR": {
+            "CURRENT": "Por favor, digite a palavra-passe actual",
+            "NEW": "Por favor, digite a nova palavra-passe",
+            "CONFIRM_NEW": "Por favor, confirme a nova palavra-passe",
+            "PASSWORD_TOO_SHORT": "Palavra-passe actual incorrecta. Por favor, tente novamente",
+            "NEW_PASSWORD_TOO_SHORT": "A nova palavra-passe deve ter pelo menos 6 caracteres",
+            "CONFIRM_PASSWORD_TOO_SHORT": "A confirmação da nova palavra-passe deve ter pelo menos 6 caracteres",
+            "MISMATCH": "A nova palavra-passe não coincide"
+          }
+        },
+        "APPARENCE": {
+          "TITLE": "Aparência",
+          "THEME": {
+            "TITLE": "Tema",
+            "LIGHT_MODE": {
+              "TITLE": "Claro",
+              "INFO": "Tema claro"
+            },
+            "DARK_MODE": {
+              "TITLE": "Escuro",
+              "INFO": "Tema escuro"
+            }
+          },
+          "LANGUAGE": {
+            "TITLE": "Língua",
+            "SPANISH": {
+              "TITLE": "Espanhol",
+              "INFO": "Espanha"
+            },
+            "FRENCH": {
+              "TITLE": "Francês",
+              "INFO": "França"
+            },
+            "ENGLISH": {
+              "TITLE": "Inglês",
+              "INFO": "Reino Unido"
+            },
+            "ITALIAN": {
+              "TITLE": "Italiano",
+              "INFO": "Itália"
+            },
+            "MANDARIN": {
+              "TITLE": "Mandarim",
+              "INFO": "China"
+            },
+            "PORTUGUESE": {
+              "TITLE": "Português",
+              "INFO": "Moçambique"
+            }
+          },
+          "LINGO": {
+            "TITLE": "Dialeto",
+            "MAKHUWA": {
+              "ABREV": "MKH",
+              "TITLE": "Makhuwa",
+              "INFO": "Moçambique"
+            },
+            "XICHANGANA": {
+              "ABREV": "XIG",
+              "TITLE": "Xichangana",
+              "INFO": "Moçambique"
+            },
+            "SENA": {
+              "ABREV": "SEH",
+              "TITLE": "Sena",
+              "INFO": "Moçambique"
+            }
+          }
+        },
+        "PAYMENT_METHOD": {
+          "TITLE": "Métodos de Pagamentos"
+        },
+        "OTHERS": {
+          "TITLE": "Outras",
+          "VAT": "Taxa (IVA)",
+          "MINIMUM_STOCK": "Estoque mínimo (alerta)"
+        },
+        "LICENSE": {
+          "TITLE": "Licença"
+        }
+      }
+    }
+  }
+}

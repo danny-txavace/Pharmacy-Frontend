@@ -1,0 +1,120 @@
+<section class="admin_sidebar w-full flex gap-7">
+  <article class="card button scrollbar_custom w-80">
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.PROFILE.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['profile']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-user"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['notifications']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-bell"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.SECURITY.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['security']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-shield"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.APPARENCE.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['apparence']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-palette"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.PAYMENT_METHOD.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['payment_method']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-wallet"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.PAYMENT_METHOD.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.OTHERS.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['other']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-wrench"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.OTHERS.TITLE' | translate }}</p>
+      </span>
+    </a>
+
+    <!--
+    <a  pRipple
+      (click)="navigateTo([
+        { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+        { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.LICENSE.TITLE' }
+      ])"
+      routerLinkActive="active-btn"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['license']"
+    >
+      <span class="active-span"></span>
+      <span class="flex gap-2 items-center">
+        <i class="pi pi-lock"></i>
+        <p>{{ 'ADMIN.CENTRE.SETTINGS.LICENSE.TITLE' | translate }}</p>
+      </span>
+    </a>
+    -->
+  </article>
+  <article class="w-full">
+    <router-outlet></router-outlet>
+  </article>
+</section>

@@ -1,0 +1,36 @@
+<main class="auth">
+  <section class="licence">
+    <article>
+      <i class="pi pi-shield"></i>
+    </article>
+    <article class="w-100 flex flex-col gap-10">
+      <form
+        [formGroup]="form"
+      >
+        <input type="text" pInputText
+          maxlength="250"
+          id="code"
+          autocomplete="off"
+          formControlName="code"
+          placeholder="* * * * *"
+          [invalid]="isError()"
+        />
+      </form>
+
+      <div class="flex flex-col items-center text-center">
+        @if (isLoading())
+        {
+          <div class="loader flex flex-col gap-1 items-center">
+            <span class="small_loader"></span>
+            <p class="text-sm points_loader">A verificar, por favor aguarde</p>
+          </div>
+        }
+
+        @if (isError())
+        {
+          <p-message severity="error" size="small" variant="simple">Código não encontrado, tente novamente ou entre em contacto com o suporte!</p-message>
+        }
+      </div>
+    </article>
+  </section>
+</main>

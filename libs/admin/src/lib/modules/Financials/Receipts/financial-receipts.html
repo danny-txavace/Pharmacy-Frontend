@@ -1,0 +1,98 @@
+<section>
+  <article class="loader ag_grid w-full flex flex-col gap-1">
+    <p-floatlabel variant="on" class="w-[25rem]">
+      <p-iconfield>
+        <p-inputicon class="pi pi-search" />
+        <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+      </p-iconfield>
+      <label for="lbl_search">
+        {{ 'COMMON.FORM.SEARCH' | translate }}
+      </label>
+    </p-floatlabel>
+
+    @if (!tableLoading)
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <ag-grid-angular
+        class="ag_theme_alpine w-full"
+        [rowData]="pageData"
+        [columnDefs]="columnDefs"
+        [animateRows]="true"
+        [domLayout]="'autoHeight'"
+        [pagination]="true"
+        [paginationPageSize]="pageSize"
+        [suppressPaginationPanel]="true"
+        [headerHeight]="headerHeight"
+        [rowHeight]="rowHeight"
+        [rowSelection]="rowSelection"
+        [gridOptions]="gridOptions"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+
+      <p>
+        {{ 'COMMON.TABLE.FOOTER.SHOWING' | translate }}
+        {{ startIndex + 1 }}
+        {{ 'COMMON.TABLE.FOOTER.TO' | translate }}
+        {{ endIndex }}
+        {{ 'COMMON.TABLE.FOOTER.OF' | translate }}
+        {{ showTotalPag }}
+        {{ 'COMMON.TABLE.FOOTER.ENTRIES' | translate }}
+      </p>
+
+      <div class="pagination">
+        <button (click)="goToStart()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-left"></i>
+        </button>
+        <button (click)="gotToPrevious()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-left"></i>
+        </button>
+
+        <div class="ag_number">
+          @for (page of totalPagesArray; track $index) {
+            @if (isNumber(page)) {
+              <button
+                (click)="goToPage(page)"
+                [class.active]="currentPage === page"
+                class="btn_icon"
+              >
+                {{ page }}
+              </button>
+            }
+            @if (!isNumber(page)) {
+              <span class="cursor-default text-gray-400 mx-1">.&nbsp;.&nbsp;.</span>
+            }
+          }
+        </div>
+
+        <button (click)="goToNext()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-right"></i>
+        </button>
+        <button (click)="goToEnd()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-right"></i>
+        </button>
+      </div>
+    }
+  </article>
+</section>

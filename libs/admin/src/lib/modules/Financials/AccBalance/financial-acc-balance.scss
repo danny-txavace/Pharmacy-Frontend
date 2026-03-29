@@ -1,0 +1,115 @@
+/* Card base */
+.account-card {
+  width: 100%;
+  color: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.account-card:hover {
+  transform: translateY(-7px);
+  //box-shadow: 0 28px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Cores */
+.account-card.blue {
+  background: linear-gradient(135deg, #1ca2c4, #0061a1);
+}
+
+.account-card.cash {
+  background: rgb(0, 133, 2);
+}
+
+.account-card.eMola {
+  background: oklch(70.269% 0.19853 43.824);
+}
+
+.account-card.mkesh {
+  background: rgb(185, 173, 1);
+}
+
+.account-card.mPesa {
+  background: rgb(143, 0, 0);
+}
+
+.account-card.absa {
+  background: rgb(143, 0, 0);
+}
+
+.account-card.bci {
+  background: linear-gradient(135deg, #ff6a2c, #f44336);
+}
+
+.account-card.firstCapital {
+  background: rgb(32, 0, 85);
+}
+
+.account-card.bim {
+  background: rgb(143, 0, 83);
+}
+
+.account-card.moza {
+  background: rgb(143, 0, 0);
+}
+
+.account-card.standard {
+  background: rgb(0, 56, 121);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Conteúdo */
+.account-card h3 {
+  font-size: 16pt;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sub {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 16px 0;
+}
+
+.label {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.amount {
+  font-size: 20pt;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-align: end;
+}

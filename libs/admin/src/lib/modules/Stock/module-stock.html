@@ -1,0 +1,110 @@
+<section class="admin_financial_info mb-20 w-full flex items-center justify-between">
+  <p>{{ 'ADMIN.CENTRE.STOCK.INFO' | translate }}</p>
+  <button pRipple
+    class="btn_default flex gap-4 justify-center items-center"
+  >
+    <i class="pi pi-plus" style="font-size: 0.7rem"></i>
+    <span>{{ 'ADMIN.CENTRE.STOCK.BTN' | translate }}</span>
+  </button>
+</section>
+
+<section class="w-full mb-10 flex flex-col gap-5">
+  <article class="card w-full flex gap-5">
+    <div class="card_mini w-full space-y-2">
+      <h2>
+        {{ 'ADMIN.CENTRE.STOCK.CARD.WAREHOUSE' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_toPay>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_toPay>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2">
+      <h2>
+        {{ 'ADMIN.CENTRE.STOCK.CARD.STORE' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_toPay>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_toPay>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2 text-yellow-600">
+      <h2>
+        {{ 'ADMIN.CENTRE.STOCK.CARD.DUE_SOON' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_dueSoon>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_dueSoon>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2 text-red-500">
+      <h2>
+        {{ 'ADMIN.CENTRE.STOCK.CARD.OVERDUE' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_overdue>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.STOCK.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_overdue>0</h3>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <p-tabs value="Statistic">
+    <p-tablist>
+      <p-tab value="Statistic"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-box', label: 'ADMIN.CENTRE.STOCK.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.STOCK.TABLIST.STATISTIC' }
+        ])"
+      >
+        <i class="pi pi-chart-line"></i>
+        <span>{{ 'ADMIN.CENTRE.STOCK.TABLIST.STATISTIC' | translate }}</span>
+      </p-tab>
+
+      <p-tab value="Expiration"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-box', label: 'ADMIN.CENTRE.STOCK.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.STOCK.TABLIST.EXPIRATION' }
+        ])"
+      >
+        <i class="pi pi-calendar-clock"></i>
+        <span>{{ 'ADMIN.CENTRE.STOCK.TABLIST.EXPIRATION' | translate }}</span>
+      </p-tab>
+    </p-tablist>
+
+    <p-tabpanels>
+      <p-tabpanel value="Statistic">
+        <lib-layout-stock-statistic></lib-layout-stock-statistic>
+      </p-tabpanel>
+
+      <p-tabpanel value="Expiration">
+        <lib-layout-stock-expiration></lib-layout-stock-expiration>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</section>

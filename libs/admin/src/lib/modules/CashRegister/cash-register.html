@@ -1,0 +1,148 @@
+<main class="w-full grid gap-10">
+    <section class="admin_financial_info mb-10 w-full flex items-center justify-between">
+    <p>{{ 'ADMIN.CENTRE.CASH_REGISTER.INFO' | translate }}</p>
+
+    <div class="btn flex gap-2">
+      <button pRipple type="button" class="btn_default flex gap-4 justify-center items-center w-30" (click)="onDialogOpenCash()">
+        <i class="pi pi-folder-open" style="font-size: 0.8rem"></i>
+        <span>{{ 'ADMIN.CENTRE.CASH_REGISTER.BTN.OPEN' | translate }}</span>
+      </button>
+      <button pRipple type="button" class="btn_default flex gap-4 justify-center items-center w-30" (click)="onDialogCloseCash()">
+        <i class="pi pi-folder" style="font-size: 0.8rem"></i>
+        <span>{{ 'ADMIN.CENTRE.CASH_REGISTER.BTN.CLOSE' | translate }}</span>
+      </button>
+      <button pRipple type="button" class="btn_default flex gap-4 justify-center items-center w-30" (click)="onDialogCashIn()">
+        <i class="pi pi-plus" style="font-size: 0.7rem"></i>
+        <span>{{ 'ADMIN.CENTRE.CASH_REGISTER.BTN.CASH_IN' | translate }}</span>
+      </button>
+      <button pRipple type="button" class="btn_default flex gap-4 justify-center items-center w-30" (click)="onDialogCashOut()">
+        <i class="pi pi-minus" style="font-size: 0.7rem"></i>
+        <span>{{ 'ADMIN.CENTRE.CASH_REGISTER.BTN.CASH_OUT' | translate }}</span>
+      </button>
+    </div>
+  </section>
+  <section class="card w-full flex gap-3 justify-center items-center">
+    <div class="w-full card_mini">
+      <article class="flex justify-between">
+        <h2>
+          {{ 'ADMIN.CENTRE.CASH_REGISTER.CARD.INITIAL_BALANCE' | translate }}
+        </h2>
+      </article>
+      <h3 #countUpAmount_InitialBalance>0,00</h3>
+    </div>
+    <div class="w-full card_mini">
+      <h2 class="text-blue-600!">
+        {{ 'ADMIN.CENTRE.CASH_REGISTER.CARD.CASH_IN' | translate }}
+      </h2>
+      <h3 class="text-blue-600!" #countUpAmount_TotalRevenue>0,00</h3>
+    </div>
+    <div class="w-full card_mini">
+      <h2 class="text-red-600!">
+        {{ 'ADMIN.CENTRE.CASH_REGISTER.CARD.CASH_OUT' | translate }}
+      </h2>
+      <h3 class="text-red-600!" #countUpAmount_TotalExpense>0,00</h3>
+    </div>
+    <div class="w-full card_mini">
+      <h2 class="text-green-600!">
+        {{ 'ADMIN.CENTRE.CASH_REGISTER.CARD.EXPECTED_BALANCE' | translate }}
+      </h2>
+      <h3 class="text-green-600!" #countUpAmount_TotalProfit>0,00</h3>
+    </div>
+  </section>
+  <section class="loader ag_grid w-full flex flex-col gap-1">
+    <p-floatlabel variant="on" class="w-[25rem]">
+      <p-iconfield>
+        <p-inputicon class="pi pi-search" />
+        <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+      </p-iconfield>
+      <label for="lbl_search">
+        {{ 'COMMON.FORM.SEARCH' | translate }}
+      </label>
+    </p-floatlabel>
+
+    @if (!tableLoading)
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <ag-grid-angular
+        class="ag_theme_alpine w-full"
+        [rowData]="pageData"
+        [columnDefs]="columnDefs"
+        [animateRows]="true"
+        [domLayout]="'autoHeight'"
+        [pagination]="true"
+        [paginationPageSize]="pageSize"
+        [suppressPaginationPanel]="true"
+        [headerHeight]="headerHeight"
+        [rowHeight]="rowHeight"
+        [rowSelection]="rowSelection"
+        [gridOptions]="gridOptions"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+
+      <p>
+        {{ 'COMMON.TABLE.FOOTER.SHOWING' | translate }}
+        {{ startIndex + 1 }}
+        {{ 'COMMON.TABLE.FOOTER.TO' | translate }}
+        {{ endIndex }}
+        {{ 'COMMON.TABLE.FOOTER.OF' | translate }}
+        {{ showTotalPag }}
+        {{ 'COMMON.TABLE.FOOTER.ENTRIES' | translate }}
+      </p>
+
+      <div class="pagination">
+        <button (click)="goToStart()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-left"></i>
+        </button>
+        <button (click)="gotToPrevious()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-left"></i>
+        </button>
+
+        <div class="ag_number">
+          @for (page of totalPagesArray; track $index) {
+            @if (isNumber(page)) {
+              <button
+                (click)="goToPage(page)"
+                [class.active]="currentPage === page"
+                class="btn_icon"
+              >
+                {{ page }}
+              </button>
+            }
+            @if (!isNumber(page)) {
+              <span class="cursor-default text-gray-400 mx-1">.&nbsp;.&nbsp;.</span>
+            }
+          }
+        </div>
+
+        <button (click)="goToNext()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-right"></i>
+        </button>
+        <button (click)="goToEnd()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-right"></i>
+        </button>
+      </div>
+    }
+  </section>
+</main>

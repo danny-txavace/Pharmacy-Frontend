@@ -1,0 +1,109 @@
+<section class="admin_financial_info mb-20 w-full flex items-center justify-between">
+  <p>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.TOP_INFO.INFO' | translate }}</p>
+  <button pRipple (click)="onDialogCreate()"
+    class="btn_default flex gap-4 justify-center items-center"
+  >
+    <i class="pi pi-plus" style="font-size: 0.7rem"></i>
+    <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.TOP_INFO.BTN' | translate }}</span>
+  </button>
+</section>
+<section class="w-full flex flex-col gap-5">
+  <article class="card w-full flex gap-5">
+    <div class="card_mini w-full space-y-2">
+      <h2>
+        {{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.TO_PAY' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_toPay>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_toPay>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2 text-yellow-600">
+      <h2>
+        {{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.DUE_SOON' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_dueSoon>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_dueSoon>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2 text-red-500">
+      <h2>
+        {{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.OVERDUE' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_overdue>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_overdue>0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card_mini w-full space-y-2 text-green-500">
+      <h2>
+        {{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.PAID' | translate }}
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.QTY' | translate }}</span>
+          <h3 #countUpQty_paid>0</h3>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_PAYABLE.CARD.AMOUNT' | translate }}</span>
+          <h3 #countUpAmount_paid>0</h3>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="loader ag_grid w-full flex flex-col gap-1">
+    <p-floatlabel variant="on" class="w-[25rem]">
+      <p-iconfield>
+        <p-inputicon class="pi pi-search" />
+        <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+      </p-iconfield>
+      <label for="lbl_search">
+        {{ 'COMMON.FORM.SEARCH' | translate }}
+      </label>
+    </p-floatlabel>
+
+    @if (!tableLoading)
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <ag-grid-angular
+        class="ag_theme_alpine w-full"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [animateRows]="true"
+        [domLayout]="'autoHeight'"
+        [pagination]="false"
+        [headerHeight]="headerHeight"
+        [rowHeight]="rowHeight"
+        [rowSelection]="rowSelection"
+        [gridOptions]="gridOptions"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+    }
+  </article>
+</section>

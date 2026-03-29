@@ -1,0 +1,336 @@
+<section class="admin_financial_info mb-20 w-full flex items-center justify-between">
+  <p>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.TOP_INFO' | translate }}</p>
+  <button pRipple
+    class="btn_default flex gap-4 justify-center items-center"
+    (click)="onDialogCreate()"
+  >
+    <i class="pi pi-arrow-right-arrow-left" style="font-size: 0.8rem"></i>
+    <span>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.BTN_TRANSFER_FUNDS' | translate }}</span>
+  </button>
+</section>
+<section class="w-full mb-10 flex flex-col gap-10 items-center">
+  <article class="w-full flex flex-col gap-5">
+    <div class="flex gap-5">
+      <div class="account-card blue">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.TOTAL_BALANCE' | translate }}</span>
+          <div class="icon-box">📊</div>
+        </div>
+
+        <h3>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.TOTAL' | translate }}</h3>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_total class="amount">0</p>
+      </div>
+
+      <div class="account-card cash">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.INTERNAL_CASH' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/cash_logo.png"
+              alt="cash"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.CASH' | translate }}</h3>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_cash class="amount">0</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5">
+      <div class="account-card eMola">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.MOBILE_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/eMola_logo.png"
+              alt="eMola"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>E-Mola</h3>
+        <p class="sub">Movitel</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_eMola class="amount">0</p>
+      </div>
+
+      <div class="account-card mkesh">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.MOBILE_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/mKesh_logo.png"
+              alt="mKesh"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>M-Kesh</h3>
+        <p class="sub">Tmcel</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_eMola class="amount">0</p>
+      </div>
+
+      <div class="account-card mPesa">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.MOBILE_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/mPesa_logo.png"
+              alt="mPesa"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>M-Pesa</h3>
+        <p class="sub">Vodacom</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_mPesa class="amount">0</p>
+      </div>
+
+      <div class="account-card absa">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/absa_logo.png"
+              alt="absa"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>Absa</h3>
+        <p class="sub">Banco Absa Moçambique</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+
+      <div class="account-card bci">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/bci_logo.png"
+              alt="bci"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>BCI</h3>
+        <p class="sub">Banco Comercial e de Investimentos</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+
+      <div class="account-card firstCapital">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/firstCapital_logo.png"
+              alt="firstCapital"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>First Capital</h3>
+        <p class="sub">First Capital Bank</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+
+      <div class="account-card bim">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/millennium_logo.png"
+              alt="bim"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>Millennium BIM</h3>
+        <p class="sub">Banco Millennium BIM</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+
+      <div class="account-card moza">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/moza_logo.png"
+              alt="moza"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>Moza</h3>
+        <p class="sub">Moza Banco</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+
+      <div class="account-card standard">
+        <div class="card-header">
+          <span class="badge">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.BANK_ACCOUNT' | translate }}</span>
+          <div class="icon-box">
+            <img
+              src="/assets/images/payment/standard_logo.png"
+              alt="standard"
+              loading="lazy"
+              class="w-full h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <h3>Standard Bank</h3>
+        <p class="sub">Standard Bank</p>
+
+        <div class="divider"></div>
+
+        <p class="label">{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.CARD.AVAILABLE_BALANCE' | translate }}</p>
+        <p #countUpAmount_bci class="amount">0</p>
+      </div>
+    </div>
+  </article>
+  <article class="loader ag_grid admin_financial_info w-full flex flex-col gap-1">
+    <h2>{{ 'ADMIN.CENTRE.FINANCIAL.ACC_BALANCE.TRANSFER_HISTORY' | translate }}</h2>
+    <p-floatlabel variant="on" class="w-[25rem]">
+      <p-iconfield>
+        <p-inputicon class="pi pi-search" />
+        <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+      </p-iconfield>
+      <label for="lbl_search">
+        {{ 'COMMON.FORM.SEARCH' | translate }}
+      </label>
+    </p-floatlabel>
+
+    @if (!tableLoading)
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <ag-grid-angular
+        class="ag_theme_alpine w-full"
+        [rowData]="pageData"
+        [columnDefs]="columnDefs"
+        [animateRows]="true"
+        [domLayout]="'autoHeight'"
+        [pagination]="true"
+        [paginationPageSize]="pageSize"
+        [suppressPaginationPanel]="true"
+        [headerHeight]="headerHeight"
+        [rowHeight]="rowHeight"
+        [rowSelection]="rowSelection"
+        [gridOptions]="gridOptions"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+      <p>
+        {{ 'COMMON.TABLE.FOOTER.SHOWING' | translate }}
+        {{ startIndex + 1 }}
+        {{ 'COMMON.TABLE.FOOTER.TO' | translate }}
+        {{ endIndex }}
+        {{ 'COMMON.TABLE.FOOTER.OF' | translate }}
+        {{ showTotalPag }}
+        {{ 'COMMON.TABLE.FOOTER.ENTRIES' | translate }}
+      </p>
+
+      <div class="pagination">
+        <button (click)="goToStart()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-left"></i>
+        </button>
+        <button (click)="gotToPrevious()"
+          [disabled]="currentPage === 1"
+          [class.disabled]="currentPage === 1"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-left"></i>
+        </button>
+
+        <div class="ag_number">
+          @for (page of totalPagesArray; track $index) {
+            @if (isNumber(page)) {
+              <button
+                (click)="goToPage(page)"
+                [class.active]="currentPage === page"
+                class="btn_icon"
+              >
+                {{ page }}
+              </button>
+            }
+            @if (!isNumber(page)) {
+              <span class="cursor-default text-gray-400 mx-1">.&nbsp;.&nbsp;.</span>
+            }
+          }
+        </div>
+
+        <button (click)="goToNext()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-right"></i>
+        </button>
+        <button (click)="goToEnd()"
+          [disabled]="currentPage === totalPages"
+          [class.disabled]="currentPage === totalPages"
+          class="btn_icon"
+        >
+          <i class="pi pi-angle-double-right"></i>
+        </button>
+      </div>
+    }
+  </article>
+</section>

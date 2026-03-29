@@ -1,0 +1,93 @@
+<section class="w-full pagination">
+  <article class="mb-10 w-full flex items-start justify-between">
+    <p class="text-[13pt]">{{ 'ADMIN.CENTRE.PEOPLE.SUPPLIERS.INFO' | translate }}</p>
+    <button pRipple type="button"
+      class="btn_default btn_min-width"
+      (click)="onDialogCreate()"
+    >
+      <i class="pi pi-plus" style="font-size: 0.7rem"></i>
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.SUPPLIERS.BTN' | translate }}</span>
+    </button>
+  </article>
+
+  <article class="loader w-full flex flex-col gap-5">
+    <p-floatlabel variant="on" class="w-[25rem]">
+      <p-iconfield>
+        <p-inputicon class="pi pi-search" />
+        <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+    </p-iconfield>
+      <label for="lbl_search">
+        {{ 'COMMON.FORM.SEARCH' | translate }}
+      </label>
+    </p-floatlabel>
+
+    @if (!isLoading())
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <article class="w-full grid grid-cols-3 gap-10">
+        @for (n of [1,2,3,4,5]; track n) {
+          <lib-card-people-supplier></lib-card-people-supplier>
+        }
+
+        <!--@for (vlogs of paginatedItems; track vlogs.id) {
+          <lib-card-settings-news [data]="vlogs" class="admin_settings"></lib-card-settings-news>
+        } @empty {
+          <span class="text-gray-400 text-center"> {{ 'COMMON.TABLE_BODY.EMPTY_DATA' | translate }} </span>
+        }-->
+      </article>
+    }
+  </article>
+  <article class="btns mt-20 mb-5">
+    <button (click)="goToStart()"
+      [disabled]="currentPage === 1"
+      [class.disabled]="currentPage === 1"
+      class="btn_icon"
+    >
+      <i class="pi pi-angle-double-left"></i>
+    </button>
+    <button (click)="gotToPrevious()"
+      [disabled]="currentPage === 1"
+      [class.disabled]="currentPage === 1"
+      class="btn_icon"
+    >
+      <i class="pi pi-angle-left"></i>
+    </button>
+
+    <div class="ag_number">
+      @for (page of totalPagesArray; track $index) {
+        @if (isNumber(page)) {
+          <button
+            (click)="goToPage(page)"
+            [class.active]="currentPage === page"
+            class="btn_icon"
+          >
+            {{ page }}
+          </button>
+        }
+        @if (!isNumber(page)) {
+          <span class="cursor-default text-gray-400 mx-1">.&nbsp;.&nbsp;.</span>
+        }
+      }
+    </div>
+
+    <button (click)="goToNext()"
+      [disabled]="currentPage === totalPages"
+      [class.disabled]="currentPage === totalPages"
+      class="btn_icon"
+    >
+      <i class="pi pi-angle-right"></i>
+    </button>
+    <button (click)="goToEnd()"
+      [disabled]="currentPage === totalPages"
+      [class.disabled]="currentPage === totalPages"
+      class="btn_icon"
+    >
+      <i class="pi pi-angle-double-right"></i>
+    </button>
+  </article>
+</section>

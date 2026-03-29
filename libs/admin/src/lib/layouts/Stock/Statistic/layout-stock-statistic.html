@@ -1,0 +1,40 @@
+<section>
+  <article class="loader ag_grid w-full flex flex-col gap-1">
+    <div class="w-full">
+      <p-floatlabel variant="on" class="w-[25rem]">
+        <p-iconfield>
+          <p-inputicon class="pi pi-search" />
+          <input type="text" pInputText id="lbl_search" [(ngModel)]="searchInput" autocomplete="off" (input)="onSearch()" />
+        </p-iconfield>
+          <label for="lbl_search">
+            {{ 'COMMON.FORM.SEARCH' | translate }}
+          </label>
+      </p-floatlabel>
+    </div>
+
+    @if (!tableLoading)
+    {
+      <span class="w-full h-[40dvh] flex justify-center items-center">
+        <span class="view_loader"></span>
+      </span>
+    }
+    @else
+    {
+      <ag-grid-angular
+        class="ag_theme_alpine w-full"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [animateRows]="true"
+        [domLayout]="'autoHeight'"
+        [pagination]="false"
+        [suppressPaginationPanel]="false"
+        [headerHeight]="headerHeight"
+        [rowHeight]="rowHeight"
+        [rowSelection]="rowSelection"
+        [gridOptions]="gridOptions"
+        (gridReady)="onGridReady($event)"
+      >
+      </ag-grid-angular>
+    }
+  </article>
+</section>

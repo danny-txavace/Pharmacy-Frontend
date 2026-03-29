@@ -1,0 +1,109 @@
+<section class="card flex flex-col gap-10">
+  <h1 class="font-bold text-[18pt]">{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.TITLE' | translate }}</h1>
+
+  <form
+    class="max-w-sm flex flex-col gap-2"
+    [formGroup]="form"
+  >
+    @if (isDoNotMatchPassword || isTooShortCurrentPassword || isTooShortNewPassword || isTooShortConfirmNewPassword) {
+      <div class="w-full flex justify-center items-center">
+        <p-message severity="error">{{ msg() }}</p-message>
+      </div>
+    }
+
+    <div>
+      <p>{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.CURRENT' | translate }}</p>
+      <div class="w-full flex flex-col gap-1">
+        <p-iconfield class="w-full" (click)="isErrorCurrentPassword = false">
+          <p-inputicon class="pi pi-lock" [ngStyle]="{ color: isInvalid('currentPassword') || isErrorCurrentPassword ? 'rgb(244,119,121)' : null }"/>
+          <input type="{{ isCurrentPassword ? 'text' : 'password' }}" pInputText
+            id="on_currentPassword"
+            autocomplete="off"
+            formControlName="currentPassword"
+            placeholder="{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.CURRENT' | translate }}"
+            [invalid]="isInvalid('currentPassword') || isErrorCurrentPassword"
+          />
+          <p-inputicon
+            class="cursor-pointer"
+            [ngClass]="isCurrentPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            (click)="togglePassword('currentPassword')"
+            [ngStyle]="{ color: isInvalid('currentPassword') ? 'rgb(244,119,121)' : null }"
+          ></p-inputicon>
+        </p-iconfield>
+        @if (isInvalid('currentPassword') || isErrorCurrentPassword) {
+          <p-message severity="error" size="small" variant="simple">{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.ERROR.CURRENT' | translate }}</p-message>
+        }
+      </div>
+    </div>
+
+    <div>
+      <p>{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.NEW' | translate }}</p>
+      <div class="w-full flex flex-col gap-1">
+        <p-iconfield class="w-full" (click)="isErrorNewPassword = false">
+          <p-inputicon class="pi pi-lock" [ngStyle]="{ color: isInvalid('newPassword') || isErrorNewPassword ? 'rgb(244,119,121)' : null }"/>
+          <input type="{{ isNewPassword ? 'text' : 'password' }}" pInputText
+            id="on_newPassword"
+            autocomplete="off"
+            formControlName="newPassword"
+            placeholder="{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.NEW' | translate }}"
+            [invalid]="isInvalid('newPassword') || isErrorNewPassword"
+          />
+          <p-inputicon
+            class="cursor-pointer"
+            [ngClass]="isNewPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            (click)="togglePassword('newPassword')"
+            [ngStyle]="{ color: isInvalid('newPassword') ? 'rgb(244,119,121)' : null }"
+          ></p-inputicon>
+        </p-iconfield>
+        @if (isInvalid('newPassword') || isErrorNewPassword) {
+          <p-message severity="error" size="small" variant="simple">{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.ERROR.NEW' | translate }}</p-message>
+        }
+      </div>
+    </div>
+
+    <div>
+      <p>{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.CONFIRM_NEW' | translate }}</p>
+      <div class="w-full flex flex-col gap-1">
+        <p-iconfield class="w-full" (click)="isErrorConfirmNewPassword = false">
+          <p-inputicon class="pi pi-lock" [ngStyle]="{ color: isInvalid('confirmNewPassword') || isErrorConfirmNewPassword ? 'rgb(244,119,121)' : null }"/>
+          <input type="{{ isConfirmNewPassword ? 'text' : 'password' }}" pInputText
+            id="on_confirmNewPassword"
+            autocomplete="off"
+            formControlName="confirmNewPassword"
+            placeholder="{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.LABEL.CONFIRM_NEW' | translate }}"
+            [invalid]="isInvalid('confirmNewPassword') || isErrorConfirmNewPassword"
+          />
+          <p-inputicon
+            class="cursor-pointer"
+            [ngClass]="isConfirmNewPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"
+            (click)="togglePassword('confirmNewPassword')"
+            [ngStyle]="{ color: isInvalid('confirmNewPassword') ? 'rgb(244,119,121)' : null }"
+          ></p-inputicon>
+        </p-iconfield>
+        @if (isInvalid('confirmNewPassword') || isErrorConfirmNewPassword) {
+          <p-message severity="error" size="small" variant="simple">{{ 'ADMIN.CENTRE.SETTINGS.SECURITY.ERROR.CONFIRM_NEW' | translate }}</p-message>
+        }
+      </div>
+    </div>
+  </form>
+
+  <p-divider style="margin: 0.5rem 0 0.5rem 0;"/>
+
+  <article class="flex justify-end">
+    <button pRipple type="button"
+      class="btn_default btn_min-width"
+      [disabled]="isLoading"
+      (click)="onSubmit()"
+    >
+      @if (isLoading) {
+        <div class="loader">
+          <span class="small_loader"></span>
+        </div>
+      }
+      @else {
+        <i class="pi pi-save" style="font-size: 1rem"></i>
+        <span>{{ 'COMMON.ACTIONS.SAVE' | translate }}</span>
+      }
+    </button>
+  </article>
+</section>

@@ -1,0 +1,634 @@
+<section class="card scrollbar_custom w-full h-full flex flex-col justify-between overflow-y-auto">
+  <article>
+    @if (isCollapsed)
+    {
+      <div class="mb-6 flex gap-2 justify-start items-center">
+        <img [src]="logoUrl()" alt="logo" width="65" loading="lazy" />
+        <h2 class="gradient-text">PHARMACY&nbsp;RAM<br>FULL NAME</h2>
+      </div>
+    }
+    @else
+    {
+      <div class="mb-6 flex gap-2 justify-center items-center">
+        <img src="{{ logoUrl() }}" alt="logo" width="45" loading="lazy" />
+      </div>
+    }
+    <div class="button">
+      <a  pRipple
+          [pTooltip]="tooltipDashboard"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-objects-column', label: 'ADMIN.SIDEBAR.DASHBOARD' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['dashboard']"
+        >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-objects-column"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.DASHBOARD' | translate }}</p> }
+        </span>
+      </a>
+
+      <a  pRipple
+          [pTooltip]="tooltipPointOfSale"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-shopping-cart', label: 'ADMIN.SIDEBAR.POS.TITLE' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['pos']"
+      >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-shopping-cart"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.POS.ABREV' | translate }}</p> }
+        </span>
+      </a>
+
+      <a  pRipple
+          [pTooltip]="tooltipCashRegister"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-inbox', label: 'ADMIN.SIDEBAR.CASH_REGISTER' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['cash_register']"
+      >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-inbox"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.CASH_REGISTER' | translate }}</p> }
+        </span>
+      </a>
+
+      <a  pRipple
+          [pTooltip]="tooltipSales"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-sitemap', label: 'ADMIN.SIDEBAR.SALES' },
+            { is_button: false, label: 'ADMIN.CENTRE.SALES.TABLIST.OVERVIEW' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['sales']"
+      >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-sitemap"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.SALES' | translate }}</p> }
+        </span>
+      </a>
+
+      <a  pRipple
+          [pTooltip]="tooltipStock"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-box', label: 'ADMIN.SIDEBAR.STOCK' },
+            { is_button: false, label: 'ADMIN.CENTRE.STOCK.TABLIST.STATISTIC' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['stock']"
+      >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-box"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.STOCK' | translate }}</p> }
+        </span>
+      </a>
+
+      <a  pRipple
+          [pTooltip]="tooltipItems"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-tags', label: 'ADMIN.SIDEBAR.ITEMS' }
+          ])"
+          routerLinkActive="active-btn"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="['items']"
+      >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-tags"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.ITEMS' | translate }}</p> }
+        </span>
+      </a>
+
+      <button pRipple
+        [pTooltip]="tooltipFinancialTitle"
+        tooltipPosition="right"
+        [tooltipDisabled]="isCollapsed"
+        (click)="toggleBtn('financial')"
+        [ngClass]="{ 'active-btn': isActiveFinancial }"
+      >
+        <span class="active-span"></span>
+        <div class="w-full flex justify-between items-center">
+          @if (isCollapsed)
+          {
+            <span class="flex gap-2 items-center">
+              <i class="pi pi-building-columns"></i>
+              @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.TITLE' | translate }}</p> }
+            </span>
+            <i
+              class="mr-2 transition-transform duration-300"
+              ngClass="pi pi-angle-down"
+              [style.transform]="isOpenFinancial ? 'rotate(540deg)' : 'rotate(0deg)'"
+            ></i>
+          }
+          @else
+          {
+            <i class="pi pi-building-columns"></i>
+            <i
+              class="transition-transform duration-300"
+              ngClass="pi pi-angle-down"
+              [style.transform]="isOpenFinancial ? 'rotate(540deg)' : 'rotate(0deg)'"
+            ></i>
+          }
+        </div>
+      </button>
+      @if (isOpenFinancial) {
+        <div class="overflow-hidden">
+          <div [ngClass]="isCollapsed ? 'pl-8' : 'pl-2'">
+            <a pRipple
+              [pTooltip]="tooltipFAccPayable"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_PAYABLE' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-acc_payable']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_PAYABLE' | translate }}</p>
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.ACCOUNTS_PAYABLE' | translate }}</p>
+                </span>
+              }
+            </a>
+            <a pRipple
+              [pTooltip]="tooltipFAccReceivable"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: true, label: 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_RECEIVABLE', url: ['financial-accounts-receivable'] }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-acc_receivable']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_RECEIVABLE' | translate }}</p>
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.ACCOUNTS_RECEIVABLE' | translate }}</p>
+                </span>
+              }
+            </a>
+            <a pRipple
+              [pTooltip]="tooltipFAccBalance"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_BALANCE' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-acc_balance']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                <span class="active-line_btn"></span>
+                <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_BALANCE' | translate }}</p>
+              </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.ACCOUNTS_BALANCE' | translate }}</p>
+                </span>
+              }
+            </a>
+
+            <!--
+            <a pRipple
+              [pTooltip]="tooltipFCashFlow"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.FINANCIAL.CASH_FLOW' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-cash_flow']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                <span class="active-line_btn"></span>
+                <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.CASH_FLOW' | translate }}</p>
+              </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.CASH_FLOW' | translate }}</p>
+                </span>
+              }
+            </a>
+            -->
+
+            <a pRipple
+              [pTooltip]="tooltipFReceipts"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.FINANCIAL.RECEIPTS' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-receipts']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.RECEIPTS' | translate }}</p>
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.RECEIPTS' | translate }}</p>
+                </span>
+              }
+            </a>
+
+            <!--
+            <a pRipple
+              [pTooltip]="tooltipFReports"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-building-columns', label: 'ADMIN.SIDEBAR.FINANCIAL.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.FINANCIAL.REPORTS' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['financial-reports']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.REPORTS' | translate }}</p>
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ABREV.REPORTS' | translate }}</p>
+                </span>
+              }
+            </a>
+            -->
+          </div>
+        </div>
+      }
+
+      <p-divider style="margin: 0.5rem 0 0.5rem 0;"/>
+
+      <button pRipple
+        [pTooltip]="tooltipPeopleTitle"
+        tooltipPosition="right"
+        [tooltipDisabled]="isCollapsed"
+        (click)="toggleBtn('people')"
+        [ngClass]="{ 'active-btn': isActivePeople }"
+      >
+        <span class="active-span"></span>
+        <div class="w-full flex justify-between items-center">
+          @if (isCollapsed)
+          {
+            <span class="flex gap-2 items-center">
+              <i class="pi pi-users"></i>
+              @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.PEOPLE.TITLE' | translate }}</p> }
+            </span>
+            <i
+              class="mr-2 transition-transform duration-300"
+              ngClass="pi pi-angle-down"
+              [style.transform]="isOpenPeople ? 'rotate(540deg)' : 'rotate(0deg)'"
+            ></i>
+          }
+          @else
+          {
+            <i class="pi pi-users"></i>
+            <i
+              class="transition-transform duration-300"
+              ngClass="pi pi-angle-down"
+              [style.transform]="isOpenPeople ? 'rotate(540deg)' : 'rotate(0deg)'"
+            ></i>
+          }
+        </div>
+      </button>
+      @if (isOpenPeople) {
+        <div class="overflow-hidden">
+          <div
+            [ngClass]="isCollapsed ? 'pl-8' : 'pl-2'"
+          >
+            <a pRipple
+              [pTooltip]="tooltipPeopleCustomers"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-users', label: 'ADMIN.SIDEBAR.PEOPLE.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.PEOPLE.CUSTOMERS' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['people-customers']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.PEOPLE.CUSTOMERS' | translate }}</p> }
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.PEOPLE.ABREV.CUSTOMERS' | translate }}</p>
+                </span>
+              }
+            </a>
+            <a pRipple
+              [pTooltip]="tooltipPeopleSuppliers"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-users', label: 'ADMIN.SIDEBAR.PEOPLE.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.PEOPLE.SUPPLIERS' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['people-suppliers']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                  <span class="active-line_btn"></span>
+                  <p>{{ 'ADMIN.SIDEBAR.PEOPLE.SUPPLIERS' | translate }}</p>
+                </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.PEOPLE.ABREV.SUPPLIERS' | translate }}</p>
+                </span>
+              }
+            </a>
+            <a pRipple
+              [pTooltip]="tooltipPeopleUsers"
+              tooltipPosition="right"
+              [tooltipDisabled]="isCollapsed"
+              (click)="navigateTo([
+                { is_button: false, icon: 'pi-users', label: 'ADMIN.SIDEBAR.PEOPLE.TITLE' },
+                { is_button: false, label: 'ADMIN.SIDEBAR.PEOPLE.USERS' }
+              ])"
+              routerLinkActive="active-btn"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="['people-users']"
+            >
+              @if (isCollapsed)
+              {
+                <span class="flex gap-2 items-center">
+                <span class="active-line_btn"></span>
+                <p>{{ 'ADMIN.SIDEBAR.PEOPLE.USERS' | translate }}</p>
+              </span>
+              }
+              @else
+              {
+                <span class="w-full text-center">
+                  <p>{{ 'ADMIN.SIDEBAR.PEOPLE.ABREV.USERS' | translate }}</p>
+                </span>
+              }
+            </a>
+          </div>
+        </div>
+      }
+
+      <a  pRipple
+          [pTooltip]="tooltipSettings"
+          tooltipPosition="right"
+          [tooltipDisabled]="isCollapsed"
+          (click)="navigateTo([
+            { is_button: false, icon: 'pi-cog', label: 'ADMIN.SIDEBAR.SETTINGS' },
+            { is_button: false, label: 'ADMIN.CENTRE.SETTINGS.PROFILE.TITLE' }
+          ])"
+          [ngClass]="{ 'active-btn': isActiveSetting }"
+          [routerLink]="['settings']"
+        >
+        <span class="active-span"></span>
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-cog"></i>
+          @if (isCollapsed) { <p>{{ 'ADMIN.SIDEBAR.SETTINGS' | translate }}</p> }
+        </span>
+      </a>
+    </div>
+  </article>
+  <article class="button mt-20">
+    <button pRipple
+      [pTooltip]="tooltipSignOut"
+      tooltipPosition="right"
+      [tooltipDisabled]="isCollapsed"
+      (click)="onSignOut()"
+    >
+      <span class="active-span"></span>
+      @if (isCollapsed)
+      {
+        <span class="flex gap-2 items-center">
+          <i class="pi pi-sign-out"></i>
+          <p>{{ 'ADMIN.SIDEBAR.SIGN_OUT' | translate }}</p>
+        </span>
+      }
+      @else
+      {
+        <span class="ml-2 flex justify-center items-center">
+          <i class="pi pi-sign-out"></i>
+        </span>
+      }
+    </button>
+    @if (isCollapsed)
+    {
+      <footer>
+        {{ 'ADMIN.SIDEBAR.FOOTER' | translate }}
+      </footer>
+    }
+  </article>
+</section>
+
+
+<!-- Tooltips -->
+<ng-template #tooltipDashboard>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-objects-column"></i>
+     <p>{{ 'ADMIN.SIDEBAR.DASHBOARD' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipPointOfSale>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-shopping-cart"></i>
+    <p>{{ 'ADMIN.SIDEBAR.POS.ABREV' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipCashRegister>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-inbox"></i>
+    <p>{{ 'ADMIN.SIDEBAR.CASH_REGISTER' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipSales>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-sitemap"></i>
+    <p>{{ 'ADMIN.SIDEBAR.SALES' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipStock>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-box"></i>
+    <p>{{ 'ADMIN.SIDEBAR.STOCK' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipItems>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-tags"></i>
+    <p>{{ 'ADMIN.SIDEBAR.ITEMS' | translate }}</p>
+  </div>
+</ng-template>
+
+<!-- Financial -->
+ <ng-template #tooltipFinancialTitle>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-building-columns"></i>
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.TITLE' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFAccPayable>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_PAYABLE' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFAccReceivable>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_RECEIVABLE' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFAccBalance>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.ACCOUNTS_BALANCE' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFCashFlow>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.CASH_FLOW' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFReceipts>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.RECEIPTS' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipFReports>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.FINANCIAL.REPORTS' | translate }}</p>
+  </div>
+</ng-template>
+
+<!-- People -->
+<ng-template #tooltipPeopleTitle>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-users"></i>
+    <p>{{ 'ADMIN.SIDEBAR.PEOPLE.TITLE' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipPeopleCustomers>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.PEOPLE.CUSTOMERS' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipPeopleSuppliers>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.PEOPLE.SUPPLIERS' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipPeopleUsers>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.SIDEBAR.PEOPLE.USERS' | translate }}</p>
+  </div>
+</ng-template>
+
+<!-- Others -->
+<ng-template #tooltipNotifications>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-bell"></i>
+    <p>{{ 'ADMIN.SIDEBAR.NOTIFICATIONS' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipSettings>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-cog"></i>
+    <p>{{ 'ADMIN.SIDEBAR.SETTINGS' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipSignOut>
+  <div class="flex gap-2 items-center">
+    <i class="pi pi-sign-out"></i>
+    <p>{{ 'ADMIN.SIDEBAR.SIGN_OUT' | translate }}</p>
+  </div>
+</ng-template>

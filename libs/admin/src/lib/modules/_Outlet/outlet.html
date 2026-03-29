@@ -1,0 +1,25 @@
+<p-toast position="bottom-right"/>
+<lib-all-dialogs></lib-all-dialogs>
+
+<div class="admin btn flex w-full h-full">
+  <aside class="h-[100dvh] p-2 fixed transition-all duration-300"
+    [ngClass]="isCollapsed ? 'w-80' : 'w-25'"
+  >
+    <lib-sidebar class="admin_sidebar"
+      [isCollapsed]="isCollapsed"
+    ></lib-sidebar>
+  </aside>
+
+  <div class="flex flex-col min-h-[10dvh] w-full p-2 min-w-0 transition-all duration-300"
+    [ngClass]="isCollapsed ? 'ml-79' : 'ml-24'"
+  >
+    <lib-navbar class="admin_navbar shadow-md shadow-black/8 p-2 rounded-xl"
+      [isCollapsed]="isCollapsed"
+      (toggleCollapsed)="toggleCollapsed()"
+    ></lib-navbar>
+
+    <main class="scrollbar_custom px-2 pt-3 rounded-3xl flex-1 overflow-y-auto">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

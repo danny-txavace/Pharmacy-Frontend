@@ -1,0 +1,22 @@
+<section class="loader w-full mb-10">
+  @if (!isLoading())
+  {
+    <span class="w-full h-[40dvh] flex justify-center items-center">
+      <span class="view_loader"></span>
+    </span>
+  }
+  @else
+  {
+    <article class="w-full grid grid-cols-3 gap-10">
+      @for (n of [1,2,3]; track n) {
+        <lib-card-people-user></lib-card-people-user>
+      }
+
+        <!--@for (vlogs of paginatedItems; track vlogs.id) {
+          <lib-card-settings-news [data]="vlogs" class="admin_settings"></lib-card-settings-news>
+        } @empty {
+          <span class="text-gray-400 text-center"> {{ 'COMMON.TABLE_BODY.EMPTY_DATA' | translate }} </span>
+        }-->
+    </article>
+  }
+</section>

@@ -1,0 +1,89 @@
+<header class="auth"><lib-navbar></lib-navbar></header>
+<main class="auth">
+  <section class="w-full flex justify-center items-top sm:mt-[5%]!">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      class="login_card_sign-in btn px-10 pt-6 pb-10 max-w-md max-sm:shadow-none! max-sm:px-[10%]!"
+    >
+      @if (isUserError || isPasswordError) {
+        <div class="w-full flex justify-center items-center">
+          <p-message severity="error">{{ 'LOGIN.SIGN_IN.ERROR.TITLE' | translate }}</p-message>
+        </div>
+      }
+      <div class="mb-3 grid gap-8">
+        <h2>
+          {{ 'LOGIN.SIGN_IN.TITLE' | translate }}
+        </h2>
+        <p>
+          {{ 'LOGIN.SIGN_IN.SUBTITLE' | translate }}
+        </p>
+      </div>
+
+      <div class="w-full flex flex-wrap justify-center items-end gap-3">
+        <div class="w-full flex flex-col gap-1">
+          <p-iconfield class="w-full" (click)="isUserError = false">
+            <p-inputicon class="pi pi-user" [ngStyle]="{ color: isInvalid('username') || isUserError ? 'rgb(244,119,121)' : null }"/>
+            <input type="text" pInputText
+              id="login_user"
+              autocomplete="off"
+              formControlName="username"
+              placeholder="{{ 'LOGIN.SIGN_IN.USERNAME' | translate}}"
+              [invalid]="isInvalid('username') || isUserError"
+            />
+          </p-iconfield>
+          @if (isInvalid('username') || isUserError) {
+            <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.SIGN_IN.ERROR.USERNAME' | translate }}</p-message>
+          }
+        </div>
+
+        <div class="w-full flex flex-col gap-1">
+          <p-iconfield class="w-full" (click)="isPasswordError = false">
+            <p-inputicon class="pi pi-lock" [ngStyle]="{ color: isInvalid('password') || isPasswordError ? 'rgb(244,119,121)' : null }"/>
+            <input type="{{ isPasswordVisible ? 'text' : 'password' }}" pInputText
+              id="on_password"
+              autocomplete="off"
+              formControlName="password"
+              placeholder="{{ 'LOGIN.SIGN_IN.PASSWORD' | translate }}"
+              [invalid]="isInvalid('password') || isPasswordError"
+            />
+            <p-inputicon
+              class="cursor-pointer"
+              [ngClass]="isPasswordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+              (click)="togglePassword()"
+              [ngStyle]="{ color: isInvalid('password') ? 'rgb(244,119,121)' : null }"
+            ></p-inputicon>
+          </p-iconfield>
+          @if (isInvalid('password') || isPasswordError) {
+            <p-message severity="error" size="small" variant="simple">{{ 'LOGIN.SIGN_IN.ERROR.PASSWORD' | translate}}</p-message>
+          }
+        </div>
+      </div>
+
+      <!--
+      <div class="flex justify-end">
+        <a pRipple type="button" class="btn-default text-sm"
+          [routerLink]="['/auth/forgot-password']"
+        >Esqueceu a Palavra-passe?</a>
+      </div>
+      -->
+
+      <div class="mt-10"></div>
+      @if (loading) {
+        <div class="loader">
+          <span class="small_loader"></span>
+        </div>
+      }
+      @else {
+        <button pRipple
+          type="submit"
+          [disabled]="form.invalid || loading"
+          class="btn_green w-full !py-5"
+        >
+          {{ 'LOGIN.SIGN_IN.BTN' | translate}}
+        </button>
+      }
+    </form>
+  </section>
+</main>
+<footer class="auth"><lib-footer></lib-footer></footer>

@@ -1,0 +1,141 @@
+<header class="min-w-0">
+  <p-toolbar>
+    <ng-template #start>
+      <article class="flex justify-start items-center gap-7">
+        <div
+          [pTooltip]="isCollapsed ? tooltipCloseMenu : tooltipOpenMenu"
+          tooltipPosition="bottom"
+          class="toggle-side_bar flex justify-start items-center"
+        >
+          <input
+            type="checkbox"
+            id="checkbox"
+            [checked]="isCollapsed"
+            (change)="toggleCollapsed.emit()"
+          />
+          <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+          </label>
+        </div>
+        <div class="breadcrumb">
+          @for (breadcrumb of breadcrumbs; track breadcrumb.label; let last = $last) {
+            @if (!last && breadcrumb.is_button) {
+              <button
+                (click)="goBackTo(breadcrumb.label)"
+                class="text-green-500 cursor-pointer hover:underline hover:text-blue-400"
+              >
+                {{ breadcrumb.label | translate }}
+              </button>
+            }
+            @else if (!last && !breadcrumb.is_button){
+              <i [class]="'pi ' + breadcrumb.icon"></i>
+              <span>{{ breadcrumb.label | translate }}</span>
+            }
+            @if (last) {
+              <i [class]="'pi ' + breadcrumb.icon"></i>
+              <span>{{ breadcrumb.label | translate }}</span>
+            }
+            @if (!last) {
+              <span>&nbsp;·</span>
+            }
+          }
+        </div>
+      </article>
+    </ng-template>
+
+    <ng-template #end>
+      <div class="btn flex items-center gap-2">
+        <button pRipple
+          [pTooltip]="isFullScreen() ? tooltipExitFullscreen : tooltipEnterFullscreen"
+          tooltipPosition="bottom"
+          class="btn_icon"
+          (click)="toggleFullscreen()"
+        >
+          <i
+            class="pi"
+            [ngClass]="isFullScreen() ? 'pi-window-minimize' : 'pi-window-maximize'"
+          ></i>
+        </button>
+        <button pRipple
+          [pTooltip]="tooltipNotifications"
+          tooltipPosition="bottom"
+          class="btn_icon"
+        >
+          <i class="pi pi-bell"></i>
+        </button>
+        <!--
+        <button pRipple
+          [pTooltip]="tooltipChat"
+          tooltipPosition="bottom"
+          class="btn_icon"
+        >
+          <i class="pi pi-comments"></i>
+        </button>
+        -->
+
+
+
+        <a  pRipple class="rounded-full !cursor-default">
+          <span class="active-span"></span>
+          <span class="flex gap-2 justify-start items-center">
+            @if (false)
+            {
+              <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" [style]="{ width: '40px', height: '40px' }" />
+            }
+            @else
+            {
+              <div class="flex justify-start">
+                <div
+                  class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-xl font-bold w-10 h-10 rounded-full"
+                >
+                  {{ fullName().charAt(0).toUpperCase() }}
+                </div>
+              </div>
+            }
+          </span>
+        </a>
+      </div>
+    </ng-template>
+  </p-toolbar>
+</header>
+
+
+<ng-template #tooltipOpenMenu>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.OPEN_MENU' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipCloseMenu>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.CLOSE_MENU' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipEnterFullscreen>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.ENTER_FULL_SCREEN' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipExitFullscreen>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.EXIT_FULL_SCREEN' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipNotifications>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.NOTIFICATIONS' | translate }}</p>
+  </div>
+</ng-template>
+
+<!--
+<ng-template #tooltipChat>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'ADMIN.NAVBAR.CHAT' | translate }}</p>
+  </div>
+</ng-template>
+-->

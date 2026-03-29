@@ -1,0 +1,153 @@
+<section class="card flex flex-col gap-10">
+  <h1 class="font-bold text-[18pt]">{{ 'ADMIN.CENTRE.SETTINGS.PAYMENT_METHOD.TITLE' | translate }}</h1>
+
+  <form
+    class="flex flex-col gap-2"
+    [formGroup]="form"
+  >
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/absa_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">Absa</p>
+          <p class="info">Banco Absa Moçambique</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="absa" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/bci_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">BCI</p>
+          <p class="info">Banco Comercial e de Investimentos</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="bci" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/eMola_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">E-Mola</p>
+          <p class="info">Carteira Móvel Movitel</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="eMola" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/mKesh_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">M-Kesh</p>
+          <p class="info">Carteira Móvel Tmcel</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="mKesh" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/mPesa_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+            <p class="title">M-Pesa</p>
+            <p class="info">Carteira Móvel Vodacom</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="mPesa" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/millennium_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">Millennium BIM</p>
+          <p class="info">Banco Millennium BIM</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="bim" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/moza_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">Moza Banco</p>
+          <p class="info">Moza Banco</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="moza" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/cash_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">Numerário</p>
+          <p class="info">Dinheiro em Espécie</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="cash" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div class="flex gap-3 items-center">
+        <div>
+          <img src="/assets/images/payment/standard_logo.png" alt="pymt_method" width="45" loading="lazy" />
+        </div>
+        <div>
+          <p class="title">Standard Bank</p>
+          <p class="info">Standard Bank Moçambique</p>
+        </div>
+      </div>
+
+      <p-toggleswitch formControlName="standard" />
+    </div>
+  </form>
+
+  <p-divider style="margin: 0.5rem 0 0.5rem 0;"/>
+
+  <article class="flex justify-end">
+    <button pRipple type="button"
+      class="btn_default btn_min-width"
+      (click)="onSubmit()"
+    >
+      @if (loading) {
+        <div class="loader">
+          <span class="small_loader"></span>
+        </div>
+      }
+      @else {
+        <i class="pi pi-save" style="font-size: 1rem"></i>
+        <span>{{ 'COMMON.ACTIONS.SAVE' | translate }}</span>
+      }
+    </button>
+  </article>
+</section>

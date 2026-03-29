@@ -1,0 +1,80 @@
+<div class="admin_people card_medium">
+  <div class="flex justify-between items-start">
+    <div class="flex justify-center">
+      <div
+        class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-2xl w-[48px] h-[48px] rounded-full"
+      >
+        {{ (data.fullName).charAt(0).toUpperCase() }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button pRipple
+        class="update"
+        [pTooltip]="tooltipEdit"
+        tooltipPosition="top"
+      >
+        <i class="pi pi-pencil"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex justify-start">
+    <h3 class="name truncate">{{ data.fullName }}</h3>
+  </div>
+
+  <div class="meta flex flex-col gap-1">
+    <div class="bottom">
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.USERNAME' | translate }}:</span>
+      <strong>{{ data.username }}</strong>
+    </div>
+
+    <div class="bottom">
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.ROLE.TITLE' | translate }}:</span>
+      <strong>
+        @if (data.role === 'admin')
+        {
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.ROLE.ADMIN' | translate }}
+        }
+        @else if (data.role === 'tecnico')
+        {
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.ROLE.OPERATOR' | translate }}
+        }
+      </strong>
+    </div>
+
+    <div class="bottom status">
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.STATUS.TITLE' | translate }}:</span>
+      @if (data.isActive)
+      {
+        <strong class="active">
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.STATUS.ACTIVE' | translate }}
+        </strong>
+      }
+      @else
+      {
+        <strong class="inactive">
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.STATUS.INACTIVE' | translate }}
+        </strong>
+      }
+    </div>
+
+    <div class="bottom">
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.CREATED_AT' | translate }}:</span>
+      <strong>{{ FormatDateNoTime(data.createdAt) }}</strong>
+    </div>
+
+    <div class="bottom">
+      <span>{{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.UPDATE_AT' | translate }}:</span>
+      <strong>{{ FormatDateWithTime(data.updatedAt) }}</strong>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #tooltipEdit>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'COMMON.ACTIONS.EDIT' | translate }}</p>
+  </div>
+</ng-template>

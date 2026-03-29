@@ -1,0 +1,56 @@
+<section class="card flex flex-col gap-10">
+  <h1 class="font-bold text-[18pt]">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.TITLE' | translate }}</h1>
+
+  <article class="flex flex-col gap-2">
+    <div class="flex justify-start">
+      <div
+        class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-[27pt] font-light w-20 h-20 rounded-full"
+      >
+        {{ ('Ramadan')!.charAt(0).toUpperCase() }}
+      </div>
+    </div>
+
+    <div>
+      <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.FULL_NAME' | translate }}</p>
+      <p>Ramadan Ismael</p>
+    </div>
+
+    <div>
+      <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.USERNAME' | translate }}</p>
+      <p>ramadan</p>
+    </div>
+
+    <div>
+      <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.ROLE.TITLE' | translate }}</p>
+      @if (true)
+      {
+        {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.ROLE.ADMIN' | translate }}
+      }
+      @else
+      {
+        {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.ROLE.OPERATOR' | translate }}
+      }
+    </div>
+
+    <div class="status">
+      <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.STATUS.TITLE' | translate }}</p>
+      @if (true)
+      {
+        <strong class="active">
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.STATUS.ACTIVE' | translate }}
+        </strong>
+      }
+      @else
+      {
+        <strong class="inactive">
+          {{ 'ADMIN.CENTRE.PEOPLE.USERS.CARD.STATUS.INACTIVE' | translate }}
+        </strong>
+      }
+    </div>
+
+    <div>
+      <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.PROFILE.CREATED_AT' | translate }}</p>
+      <p>22/03/2026</p>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,149 @@
+<section class="card flex flex-col gap-10">
+  <h1 class="font-bold text-[18pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.TITLE' | translate }}</h1>
+
+  <article class="flex flex-col gap-2">
+    <p class="font-bold text-[14pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.THEME.TITLE' | translate }}</p>
+    <article class="flex gap-5 justify-between">
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isLight }"
+        (click)="toggleBtn('light')"
+      >
+        <i class="pi pi-sun" style="font-size: 1.6rem"></i>
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.THEME.LIGHT_MODE.TITLE' | translate }}</p>
+          <p class="text-[10pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.THEME.LIGHT_MODE.INFO' | translate }}</p>
+        </div>
+      </button>
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isDark }"
+        (click)="toggleBtn('dark')"
+      >
+        <i class="pi pi-moon" style="font-size: 1.4rem"></i>
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.THEME.DARK_MODE.TITLE' | translate }}</p>
+          <p class="text-[10pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.THEME.DARK_MODE.INFO' | translate }}</p>
+        </div>
+      </button>
+    </article>
+  </article>
+
+  <article class="flex flex-col gap-2">
+    <p class="font-bold text-[14pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.TITLE' | translate }}</p>
+    <article class="grid grid-cols-3 gap-5">
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isES }"
+        (click)="toggleBtn('es')"
+      >
+        <img src="/assets/images/country/es.svg" alt="logo_es" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.SPANISH.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.SPANISH.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isFR }"
+        (click)="toggleBtn('fr')"
+      >
+        <img src="/assets/images/country/fr.svg" alt="logo_fr" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.FRENCH.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.FRENCH.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isGB }"
+        (click)="toggleBtn('en')"
+      >
+        <img src="/assets/images/country/gb.svg" alt="logo_gb" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.ENGLISH.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.ENGLISH.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isIT }"
+        (click)="toggleBtn('it')"
+      >
+        <img src="/assets/images/country/it.svg" alt="logo_it" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.ITALIAN.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.ITALIAN.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isCN }"
+        (click)="toggleBtn('zh')"
+      >
+        <img src="/assets/images/country/cn.svg" alt="logo_cn" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.MANDARIN.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.MANDARIN.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isMZ }"
+        (click)="toggleBtn('pt')"
+      >
+        <img src="/assets/images/country/mz.svg" alt="logo_mz" width="35" loading="lazy" />
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.PORTUGUESE.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LANGUAGE.PORTUGUESE.INFO' | translate }})</p>
+        </div>
+      </button>
+    </article>
+  </article>
+
+  <article class="flex flex-col gap-2">
+    <p class="font-bold text-[14pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.TITLE' | translate }}</p>
+    <article class="grid grid-cols-3 gap-5">
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isMKH }"
+        (click)="toggleBtn('mkh')"
+      >
+        <p class="text-[24pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.MAKHUWA.ABREV' | translate }}</p>
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.MAKHUWA.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.MAKHUWA.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isXIG }"
+        (click)="toggleBtn('xig')"
+      >
+        <p class="text-[24pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.XICHANGANA.ABREV' | translate }}</p>
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.XICHANGANA.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.XICHANGANA.INFO' | translate }})</p>
+        </div>
+      </button>
+
+      <button pRipple type="button"
+        class="btn_default !py-9 w-full !flex !justify-start"
+        [ngClass]="{ 'btn_active' : isSEH }"
+        (click)="toggleBtn('seh')"
+      >
+        <p class="text-[24pt]">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.SENA.ABREV' | translate }}</p>
+        <div class="text-start">
+          <p class="font-bold">{{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.SENA.TITLE' | translate }}</p>
+          <p class="text-[10pt]">({{ 'ADMIN.CENTRE.SETTINGS.APPARENCE.LINGO.SENA.INFO' | translate }})</p>
+        </div>
+      </button>
+    </article>
+  </article>
+</section>

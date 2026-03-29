@@ -1,0 +1,90 @@
+<div class="admin_people card_medium">
+  <div class="flex justify-between items-start">
+    <div class="flex justify-center">
+      <div
+        class="flex justify-center items-center bg-[#24704D] text-[#FFFFFF] text-2xl w-[48px] h-[48px] rounded-full"
+      >
+        {{ (data.fullName).charAt(0).toUpperCase() }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button pRipple
+        class="view"
+        [pTooltip]="tooltipView"
+        tooltipPosition="top"
+      >
+        <i class="pi pi-cart-arrow-down"></i>
+      </button>
+
+      <button pRipple
+        class="update"
+        [pTooltip]="tooltipEdit"
+        tooltipPosition="top"
+      >
+        <i class="pi pi-pencil"></i>
+      </button>
+
+      <button pRipple
+        class="delete"
+        [pTooltip]="tooltipDelete"
+        tooltipPosition="top"
+      >
+        <i class="pi pi-trash"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex justify-start">
+    <h3 class="name truncate">{{ data.fullName }}</h3>
+  </div>
+
+  <div class="meta">
+    <div class="body">
+      <i class="pi pi-phone"></i>
+      <strong>{{ data.phoneNumber }}</strong>
+    </div>
+
+    <div class="body">
+      <i class="pi pi-map-marker"></i>
+      <strong>{{ data.address }}</strong>
+    </div>
+
+    <div class="body">
+      <i class="pi pi-calendar"></i>
+      <strong>{{ FormatDateNoTime(data.createdAt) }}</strong>
+    </div>
+
+    <p-divider style="margin: 0.8rem 0 0.8rem 0;"/>
+
+    <div class="bottom">
+      <div>
+        <strong>{{ 'ADMIN.CENTRE.PEOPLE.CARD.TOTAL_AMOUNT' | translate }}</strong>
+        <strong>{{ FormatQty(data.totalQty) }}</strong>
+      </div>
+      <div>
+        <strong>{{ 'ADMIN.CENTRE.PEOPLE.CARD.UPDATE_AT' | translate }}</strong>
+        <strong>{{ FormatDateWithTime(data.updatedAt) }}</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #tooltipView>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'COMMON.ACTIONS.VIEW' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipEdit>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'COMMON.ACTIONS.EDIT' | translate }}</p>
+  </div>
+</ng-template>
+
+<ng-template #tooltipDelete>
+  <div class="flex gap-2 items-center">
+    <p>{{ 'COMMON.ACTIONS.DELETE' | translate }}</p>
+  </div>
+</ng-template>

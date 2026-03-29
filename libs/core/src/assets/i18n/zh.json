@@ -1,0 +1,280 @@
+{
+  "COMMON": {
+    "NOT_FOUND": {
+      "ROUTER": "未找到",
+      "TITLE": "哎呀！页面未找到",
+      "MESSAGE": "您查找的页面可能已被删除或暂时不可用。"
+    },
+    "SERVER_UNAVAILABLE": {
+      "ROUTER": "服务器不可用",
+      "TITLE": "服务暂时不可用",
+      "MESSAGE": "我们遇到技术问题。请稍后再试。"
+    },
+    "CALENDAR": {
+      "TODAY": "今天",
+      "CLEAR": "清除",
+      "DATE_FORMAT": "yyyy/mm/dd",
+      "WEEK_HEADER": "周",
+      "DAY_NAMES": {
+        "FULL": {
+          "SUNDAY": "星期日",
+          "MONDAY": "星期一",
+          "TUESDAY": "星期二",
+          "WEDNESDAY": "星期三",
+          "THURSDAY": "星期四",
+          "FRIDAY": "星期五",
+          "SATURDAY": "星期六"
+        },
+        "SHORT": {
+          "SUNDAY": "日",
+          "MONDAY": "一",
+          "TUESDAY": "二",
+          "WEDNESDAY": "三",
+          "THURSDAY": "四",
+          "FRIDAY": "五",
+          "SATURDAY": "六"
+        },
+        "MIN": {
+          "SUNDAY": "日",
+          "MONDAY": "一",
+          "TUESDAY": "二",
+          "WEDNESDAY": "三",
+          "THURSDAY": "四",
+          "FRIDAY": "五",
+          "SATURDAY": "六"
+        }
+      },
+      "MONTH_NAMES": {
+        "FULL": {
+          "JANUARY": "一月",
+          "FEBRUARY": "二月",
+          "MARCH": "三月",
+          "APRIL": "四月",
+          "MAY": "五月",
+          "JUNE": "六月",
+          "JULY": "七月",
+          "AUGUST": "八月",
+          "SEPTEMBER": "九月",
+          "OCTOBER": "十月",
+          "NOVEMBER": "十一月",
+          "DECEMBER": "十二月"
+        },
+        "SHORT": {
+          "JANUARY": "1月",
+          "FEBRUARY": "2月",
+          "MARCH": "3月",
+          "APRIL": "4月",
+          "MAY": "5月",
+          "JUNE": "6月",
+          "JULY": "7月",
+          "AUGUST": "8月",
+          "SEPTEMBER": "9月",
+          "OCTOBER": "10月",
+          "NOVEMBER": "11月",
+          "DECEMBER": "12月"
+        }
+      }
+    },
+    "CARD": {
+      "COMPARED_TO_YESTERDAY": "对比昨天",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "对比前天",
+      "COMPARED_TO_LAST_MONTH": "对比上个月",
+      "COMPARED_TO_LAST_WEEK": "对比上周",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "对比上上周",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "对比上上个月",
+      "COMPARED_TO_LAST": "对比上一期",
+      "LAST_UPDATED": "最后更新"
+    },
+    "TABLE_PAGE": {
+      "SHOWING": "显示",
+      "TO": "至",
+      "OF": "共",
+      "ENTRIES": "条记录"
+    },
+    "TABLE_BODY": {
+      "RECEIPTS": "收据",
+      "EMPTY_DATA": "暂无记录…",
+      "PAID": "已支付",
+      "NOT_PAID": "未支付",
+      "PYMT_STATUS": {
+        "CANCELLED": "已取消",
+        "OVERDUE": "逾期",
+        "PAID": "已支付",
+        "PENDING": "待处理"
+      },
+      "PYMT_METHODS": {
+        "CASH": "现金",
+        "EMOLA": "E-Mola",
+        "MPESA": "M-Pesa"
+      }
+    },
+    "GENDER": {
+      "FEMALE": "女",
+      "MALE": "男"
+    },
+    "CHART": {
+      "EXPENSES": "支出",
+      "REVENUE": "收入"
+    },
+    "ACTIONS": {
+      "CLEAR": "清除",
+      "EDIT": "编辑",
+      "DELETE": "删除",
+      "CANCEL": "取消",
+      "CONFIRM": "确认",
+      "UPDATE": "更新",
+      "SAVE": "保存"
+    }
+  },
+  "LOGIN": {
+    "ROUTER": {
+      "SIGN_IN": "登录",
+      "ADMIN": "欢迎管理员"
+    },
+    "FOOTER": "© 2025 · 药店管理系统 · 保留所有权利。",
+    "SIGN_IN": {
+      "TITLE": "欢迎回来！",
+      "SUBTITLE": "请输入您的凭据登录账户。",
+      "USERNAME": "用户名",
+      "PASSWORD": "密码",
+      "BTN": "登录",
+      "ERROR": {
+        "TITLE": "用户名或密码错误。",
+        "USERNAME": "请输入用户名",
+        "PASSWORD": "请输入密码"
+      }
+    }
+  },
+  "ADMIN": {
+    "ROUTER": {
+      "DASHBOARD": "仪表板 · 管理员",
+      "POS": "销售点 · 管理员",
+      "CASH_REGISTER": "收银台 · 管理员",
+      "PEOPLE": {
+        "CUSTOMERS": "人员管理 · 客户 · 管理员",
+        "SUPPLIERS": "人员管理 · 供应商 · 管理员",
+        "USERS": "人员管理 · 用户 · 管理员"
+      },
+      "PRODUCTS": {
+        "CONTROL": "产品管理 · 控制 · 管理员",
+        "UPDATE": "产品管理 · 更新 · 管理员",
+        "REGISTER_NEW": "产品管理 · 新增 · 管理员"
+      },
+      "FINANCIAL": {
+        "ACCOUNTS_PAYABLE": "财务管理 · 应付账款 · 管理员",
+        "ACCOUNTS_RECEIVABLE": "财务管理 · 应收账款 · 管理员",
+        "ACCOUNTS_BALANCE": "财务管理 · 账户余额 · 管理员",
+        "CASH_FLOW": "财务管理 · 现金流量 · 管理员",
+        "RECEIPTS": "财务管理 · 收据 · 管理员",
+        "REPORTS": "财务管理 · 报告 · 管理员"
+      },
+      "CHAT": "聊天 · 管理员",
+      "NOTIFICATIONS": "通知 · 管理员",
+      "SETTINGS": "设置 · 管理员"
+    },
+    "NAVBAR": {
+      "OPEN_MENU": "打开菜单",
+      "CLOSE_MENU": "关闭菜单",
+      "ENTER_FULL_SCREEN": "进入全屏",
+      "EXIT_FULL_SCREEN": "退出全屏",
+      "NOTIFICATIONS": "通知",
+      "CHAT": "聊天"
+    },
+    "SIDEBAR": {
+      "DASHBOARD": "仪表板",
+      "POS": {
+        "ABREV": "POS",
+        "TITLE": "销售点"
+      },
+      "CASH_REGISTER": "收银台",
+      "PEOPLE": {
+        "TITLE": "人员管理",
+        "CUSTOMERS": "客户",
+        "SUPPLIERS": "供应商",
+        "USERS": "用户",
+        "ABREV": {
+          "CUSTOMERS": "客",
+          "SUPPLIERS": "供",
+          "USERS": "用"
+        }
+      },
+      "PRODUCTS": {
+        "TITLE": "产品管理",
+        "CONTROL": "控制",
+        "UPDATE": "更新",
+        "REGISTER_NEW": "新增",
+        "ABREV": {
+          "CONTROL": "控",
+          "UPDATE": "更",
+          "REGISTER_NEW": "新"
+        }
+      },
+      "FINANCIAL": {
+        "TITLE": "财务管理",
+        "ACCOUNTS_PAYABLE": "应付账款",
+        "ACCOUNTS_RECEIVABLE": "应收账款",
+        "ACCOUNTS_BALANCE": "账户余额",
+        "CASH_FLOW": "现金流量",
+        "RECEIPTS": "收据",
+        "REPORTS": "报告",
+        "ABREV": {
+          "ACCOUNTS_PAYABLE": "付",
+          "ACCOUNTS_RECEIVABLE": "收",
+          "ACCOUNTS_BALANCE": "余",
+          "CASH_FLOW": "流",
+          "RECEIPTS": "据",
+          "REPORTS": "报"
+        }
+      },
+      "SETTINGS": "设置",
+      "SIGN_OUT": "退出登录",
+      "FOOTER": "© 2026 · 保留所有权利。"
+    }
+  },
+  "MESSAGE_TOAST": {
+    "INFO": {
+      "SUMMARY": "信息"
+    },
+    "SUCCESS": {
+      "SUMMARY": "成功",
+      "DETAIL": {
+        "DEFAULT": "操作成功完成。",
+        "FINANCIAL": {
+          "ACC_CREATED": "账户创建成功。",
+          "ACC_ON_CANCEL": "账户取消成功。",
+          "ACC_CONFIRM_PAYABLE": "付款确认成功，账户已更新。",
+          "ACC_BALANCE_TRANSFER_SUCCESS": "转账成功完成。"
+        }
+      }
+    },
+    "WARN": {
+      "SUMMARY": "警告"
+    },
+    "ERROR": {
+      "SUMMARY": "错误",
+      "DETAIL": {
+        "OTHERS": {
+          "DEFAULT": "出现问题，请重试。",
+          "IDENTITY_NOT_RECOGNIZED": "无法识别身份。",
+          "ORIGIN_DESTINATION_SAME": "转出账户与转入账户不能相同。"
+        },
+        "SERVER": {
+          "UNEXPECTED": "发生意外错误，请稍后再试。",
+          "NO_CONNECTION": "无法连接服务器，请检查网络或稍后再试。",
+          "INVALID_DATA": "提交的数据无效，请检查并重试。",
+          "SESSION_EXPIRED": "会话已过期或无权限，请重新登录。",
+          "NO_PERMISSION": "您没有权限执行此操作，如有疑问请联系管理员。",
+          "NOT_FOUND": "未找到请求的内容，可能已被删除或地址错误。",
+          "TIMEOUT": "操作超时，请重试。",
+          "DUPLICATE": "已存在相同记录，请检查数据。",
+          "VALIDATION": "部分数据无效，请修正标红字段后重试。",
+          "TOO_MANY_ATTEMPTS": "尝试次数过多，请稍等几分钟再试。",
+          "SERVER_PROBLEM": "服务器出现问题，技术团队已收到通知，请稍后再试。",
+          "SERVER_UNAVAILABLE": "服务器暂时不可用，请稍后再试。",
+          "SERVER_SLOW": "服务器响应缓慢，请检查网络后重试。",
+          "NO_INTERNET": "无网络连接，请检查网络后重试。"
+        }
+      }
+    }
+  }
+}

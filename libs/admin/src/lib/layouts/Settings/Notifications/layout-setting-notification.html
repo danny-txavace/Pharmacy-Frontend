@@ -1,0 +1,99 @@
+<section class="card flex flex-col gap-10">
+  <h1 class="font-bold text-[18pt]">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.TITLE' | translate }}</h1>
+
+  <form
+    class="flex flex-col gap-2"
+    [formGroup]="form"
+  >
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_1.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_1.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_1" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_2.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_2.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_2" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_3.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_3.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_3" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_4.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_4.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_4" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_5.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_5.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_5" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_6.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_6.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_6" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_7.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_7.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_7" />
+    </div>
+
+    <div class="line flex justify-between items-start">
+      <div>
+        <p class="title">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_8.TITLE' | translate }}</p>
+        <p class="info">{{ 'ADMIN.CENTRE.SETTINGS.NOTIFICATIONS.NOTF_8.INFO' | translate }}</p>
+      </div>
+
+      <p-toggleswitch formControlName="notf_8" />
+    </div>
+  </form>
+
+  <p-divider style="margin: 0.5rem 0 0.5rem 0;"/>
+
+  <article class="flex justify-end">
+    <button pRipple type="button"
+      class="btn_default btn_min-width"
+      (click)="onSubmit()"
+    >
+      @if (loading) {
+        <div class="loader">
+          <span class="small_loader"></span>
+        </div>
+      }
+      @else {
+        <i class="pi pi-save" style="font-size: 1rem"></i>
+        <span>{{ 'COMMON.ACTIONS.SAVE' | translate }}</span>
+      }
+    </button>
+  </article>
+</section>

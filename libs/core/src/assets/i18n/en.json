@@ -1,0 +1,544 @@
+{
+  "COMMON": {
+    "NOT_FOUND": {
+      "ROUTER": "Not Found",
+      "TITLE": "Oops! Page Not Found",
+      "MESSAGE": "The page you are looking for may have been removed or is temporarily unavailable."
+    },
+    "SERVER_UNAVAILABLE": {
+      "ROUTER": "Server Unavailable",
+      "TITLE": "Service Temporarily Unavailable",
+      "MESSAGE": "We are experiencing technical difficulties. Please try again later."
+    },
+    "CALENDAR": {
+      "TODAY": "Today",
+      "CLEAR": "Clear",
+      "DATE_FORMAT": "dd/mm/yy",
+      "WEEK_HEADER": "Wk",
+      "DAY_NAMES": {
+        "FULL": {
+          "SUNDAY": "Sunday",
+          "MONDAY": "Monday",
+          "TUESDAY": "Tuesday",
+          "WEDNESDAY": "Wednesday",
+          "THURSDAY": "Thursday",
+          "FRIDAY": "Friday",
+          "SATURDAY": "Saturday"
+        },
+        "SHORT": {
+          "SUNDAY": "Sun",
+          "MONDAY": "Mon",
+          "TUESDAY": "Tue",
+          "WEDNESDAY": "Wed",
+          "THURSDAY": "Thu",
+          "FRIDAY": "Fri",
+          "SATURDAY": "Sat"
+        },
+        "MIN": {
+          "SUNDAY": "Su",
+          "MONDAY": "Mo",
+          "TUESDAY": "Tu",
+          "WEDNESDAY": "We",
+          "THURSDAY": "Th",
+          "FRIDAY": "Fr",
+          "SATURDAY": "Sa"
+        }
+      },
+      "MONTH_NAMES": {
+        "FULL": {
+          "JANUARY": "January",
+          "FEBRUARY": "February",
+          "MARCH": "March",
+          "APRIL": "April",
+          "MAY": "May",
+          "JUNE": "June",
+          "JULY": "July",
+          "AUGUST": "August",
+          "SEPTEMBER": "September",
+          "OCTOBER": "October",
+          "NOVEMBER": "November",
+          "DECEMBER": "December"
+        },
+        "SHORT": {
+          "JANUARY": "Jan",
+          "FEBRUARY": "Feb",
+          "MARCH": "Mar",
+          "APRIL": "Apr",
+          "MAY": "May",
+          "JUNE": "Jun",
+          "JULY": "Jul",
+          "AUGUST": "Aug",
+          "SEPTEMBER": "Sep",
+          "OCTOBER": "Oct",
+          "NOVEMBER": "Nov",
+          "DECEMBER": "Dec"
+        }
+      }
+    },
+    "CARD": {
+      "COMPARED_TO_YESTERDAY": "vs yesterday",
+      "COMPARED_TO_DAY_BEFORE_YESTERDAY": "vs day before yesterday",
+      "COMPARED_TO_LAST_MONTH": "vs last month",
+      "COMPARED_TO_LAST_WEEK": "vs last week",
+      "COMPARED_TO_WEEK_BEFORE_LAST": "vs week before last",
+      "COMPARED_TO_MONTH_BEFORE_LAST": "vs month before last",
+      "COMPARED_TO_LAST": "vs previous",
+      "LAST_UPDATED": "last updated"
+    },
+    "TABLE_PAGE": {
+      "SHOWING": "Showing",
+      "TO": "to",
+      "OF": "of",
+      "ENTRIES": "entries"
+    },
+    "TABLE_BODY": {
+      "RECEIPTS": "Receipts",
+      "EMPTY_DATA": "No records...",
+      "PAID": "Paid",
+      "NOT_PAID": "Not Paid",
+      "PYMT_STATUS": {
+        "CANCELLED": "Cancelled",
+        "OVERDUE": "Overdue",
+        "PAID": "Paid",
+        "PENDING": "Pending"
+      },
+      "PYMT_METHODS": {
+        "CASH": "Cash",
+        "EMOLA": "E-Mola",
+        "MPESA": "M-Pesa"
+      }
+    },
+    "GENDER": {
+      "FEMALE": "Female",
+      "MALE": "Male"
+    },
+    "CHART": {
+      "EXPENSES": "Expenses",
+      "REVENUE": "Revenue"
+    },
+    "ACTIONS": {
+      "CLEAR": "Clear",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "CANCEL": "Cancel",
+      "CONFIRM": "Confirm",
+      "UPDATE": "Update",
+      "SAVE": "Save"
+    }
+  },
+
+  "LOGIN": {
+    "ROUTER": {
+      "SIGN_IN": "Sign In",
+      "ADMIN": "Welcome Admin"
+    },
+    "FOOTER": "© 2025 · Pharmacy Management · All rights reserved.",
+    "SIGN_IN": {
+      "TITLE": "Welcome back!",
+      "SUBTITLE": "Please enter your credentials to access your account.",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "BTN": "Sign In",
+      "ERROR": {
+        "TITLE": "Incorrect username or password.",
+        "USERNAME": "Enter your username",
+        "PASSWORD": "Enter your password"
+      }
+    }
+  },
+
+  "ADMIN": {
+    "ROUTER": {
+      "DASHBOARD": "Dashboard · Admin",
+      "POS": "POS · Admin",
+      "CASH_REGISTER": "Cash Register · Admin",
+      "PEOPLE": {
+        "CUSTOMERS": "People Management · Customers · Admin",
+        "SUPPLIERS": "People Management · Suppliers · Admin",
+        "USERS": "People Management · Users · Admin"
+      },
+      "PRODUCTS": {
+        "CONTROL": "Products Management · Control · Admin",
+        "UPDATE": "Products Management · Update · Admin",
+        "REGISTER_NEW": "Products Management · Register · Admin"
+      },
+      "FINANCIAL": {
+        "ACCOUNTS_PAYABLE": "Financial Management · Accounts Payable · Admin",
+        "ACCOUNTS_RECEIVABLE": "Financial Management · Accounts Receivable · Admin",
+        "ACCOUNTS_BALANCE": "Financial Management · Accounts Balance · Admin",
+        "CASH_FLOW": "Financial Management · Cash Flow · Admin",
+        "RECEIPTS": "Financial Management · Receipts · Admin",
+        "REPORTS": "Financial Management · Reports · Admin"
+      },
+      "CHAT": "Conversations · Admin",
+      "NOTIFICATIONS": "Notifications · Admin",
+      "SETTINGS": "Settings · Admin"
+    },
+    "NAVBAR": {
+      "OPEN_MENU": "Open menu",
+      "CLOSE_MENU": "Close menu",
+      "ENTER_FULL_SCREEN": "Enter full screen",
+      "EXIT_FULL_SCREEN": "Exit full screen",
+      "NOTIFICATIONS": "Notifications",
+      "CHAT": "Conversations"
+    },
+    "SIDEBAR": {
+      "DASHBOARD": "Dashboard",
+      "POS": {
+        "ABREV": "POS",
+        "TITLE": "Point of Sale"
+      },
+      "CASH_REGISTER": "Cash Register",
+      "PEOPLE": {
+        "TITLE": "People Management",
+        "CUSTOMERS": "Customers",
+        "SUPPLIERS": "Suppliers",
+        "USERS": "Users",
+        "ABREV": {
+          "CUSTOMERS": "C",
+          "SUPPLIERS": "S",
+          "USERS": "U"
+        }
+      },
+      "PRODUCTS": {
+        "TITLE": "Products Management",
+        "CONTROL": "Control",
+        "UPDATE": "Update",
+        "REGISTER_NEW": "Register",
+        "ABREV": {
+          "CONTROL": "C",
+          "UPDATE": "U",
+          "REGISTER_NEW": "R"
+        }
+      },
+      "FINANCIAL": {
+        "TITLE": "Financial Management",
+        "ACCOUNTS_PAYABLE": "Accounts Payable",
+        "ACCOUNTS_RECEIVABLE": "Accounts Receivable",
+        "ACCOUNTS_BALANCE": "Accounts Balance",
+        "CASH_FLOW": "Cash Flow",
+        "RECEIPTS": "Receipts",
+        "REPORTS": "Reports",
+        "ABREV": {
+          "ACCOUNTS_PAYABLE": "AP",
+          "ACCOUNTS_RECEIVABLE": "AR",
+          "ACCOUNTS_BALANCE": "AB",
+          "CASH_FLOW": "CF",
+          "RECEIPTS": "R",
+          "REPORTS": "R"
+        }
+      },
+      "SETTINGS": "Settings",
+      "SIGN_OUT": "Sign Out",
+      "FOOTER": "© 2026 · All rights reserved."
+    },
+    "CENTER": {
+      "FINANCIAL": {
+        "FORM_SEARCH": "Search",
+        "RECEIPTS": {
+          "TABLE_HEADER": {
+            "ACTIONS": "Actions",
+            "RECEIVED_FROM": "Received From",
+            "STUDENT": "Student",
+            "DESCRIPTION": "Description",
+            "AMOUNT": "Amount (MT)",
+            "DATE": "Date"
+          }
+        },
+        "ACCOUNTS_PAYABLE": {
+          "TOP_INFO": {
+            "INFO": "Manage all pharmacy expenses and financial obligations",
+            "BTN": "New Account"
+          },
+          "CARDS": {
+            "TO_PAY": "To Pay",
+            "DUE_SOON": "Due Soon",
+            "OVERDUE": "Overdue",
+            "PAID": "Paid (This Month)",
+            "QTY": "Qty.",
+            "AMOUNT": "Amount"
+          },
+          "TABLE": {
+            "HEADER": {
+              "ACTIONS": "Actions",
+              "NAME": "Creditor",
+              "DESCRIPTION": "Description",
+              "AMOUNT": "Amount (MT)",
+              "EXPIRATION_AT": "Due Date",
+              "STATUS": "Status"
+            }
+          },
+          "DIALOG_CREATE": {
+            "TITLE": "NEW ACCOUNT",
+            "DESC": "Complete the form to register a new payable account.",
+            "LABEL": {
+              "FULL_NAME": "Creditor",
+              "DESCRIPTION": "Description",
+              "AMOUNT": "Amount",
+              "EXPIRATION_AT": "Due Date"
+            },
+            "ERROR": {
+              "FULL_NAME": "Enter the creditor",
+              "DESCRIPTION": "Enter the description",
+              "AMOUNT": "Enter amount",
+              "EXPIRATION_AT": "Select due date"
+            }
+          },
+          "DIALOG_CONFIRM_TO_PAY": {
+            "TITLE": "Confirm Payment"
+          }
+        },
+        "ACCOUNTS_RECEIVABLE": {
+          "TOP_INFO": {
+            "INFO": "All pending transactions and receipts"
+          },
+          "CARDS": {
+            "TO_RECEIVE": "To Receive",
+            "DUE_SOON": "Due Soon",
+            "OVERDUE": "Overdue",
+            "RECEIVED": "Received (This Month)",
+            "QTY": "Qty.",
+            "AMOUNT": "Amount"
+          },
+          "TABLE": {
+            "HEADER": {
+              "ACTIONS": "Actions",
+              "FULL_NAME": "Student",
+              "DESCRIPTION": "Description",
+              "AMOUNT": "Amount (MT)",
+              "EXPIRATION_AT": "Due Date"
+            }
+          }
+        },
+        "ACCOUNTS_BALANCE": {
+          "TOP_INFO": "Financial transparency and control",
+          "BTN_TRANSFER_FUNDS": "Transfer Funds",
+          "TRANSFER_HISTORY": "Transfer History",
+          "CARDS": {
+            "TOTAL_BALANCE": "Total Balances",
+            "TOTAL": "Total",
+            "AVAILABLE_BALANCE": "Available Balance",
+            "INTERNAL_CASH": "Internal Cash",
+            "CASH": "Cash",
+            "BANK_ACCOUNT": "Bank Account",
+            "MAIN_CURRENT_ACCOUNT": "Main Current Account",
+            "BCI": "BCI · Commercial and Investment Bank",
+            "NUMBER": "No.",
+            "MOBILE_ACCOUNT": "Mobile Account"
+          },
+          "TABLE_BODY": {
+            "ORIGIN": "Origin",
+            "DESTINATION": "Destination",
+            "AMOUNT": "Amount (MT)",
+            "TRANSACTION_FEE": "Fee (MT)",
+            "DATE": "Date"
+          },
+          "DIALOG": {
+            "TITLE_FUNDS_TRANSFER": "Funds Transfer",
+            "INFO_FUNDS_TRANSFER": "Enter the details to perform the funds transfer. Verify the information before confirming.",
+            "LABEL": {
+              "ORIGIN": "Origin",
+              "DESTINATION": "Destination",
+              "AMOUNT": "Amount",
+              "TRANSACTION_FEE": "Fee"
+            },
+            "ERROR": {
+              "ORIGIN": "Select origin account.",
+              "DESTINATION": "Select destination account.",
+              "AMOUNT": "Enter the amount to transfer.",
+              "TRANSACTION_FEE": "Enter transaction fee."
+            }
+          }
+        },
+        "ACCOUNTS_DIALOGS": {
+          "CANCEL": {
+            "TITLE": "Account Cancellation",
+            "INFO_1": "Are you sure? This action is irreversible.",
+            "INFO_2": "After cancelling, you will not be able to recover the account or collect payments."
+          }
+        }
+      },
+      "PAYMENTS": {
+        "FORMS": {
+          "STUDENT": "Student",
+          "RECEIVED_FROM": "Received from",
+          "REGARDING_THE_PYMT": "Regarding payment for",
+          "TOTAL_TO_PAY": "Total amount",
+          "TITLE": "Check the total and finalise payment",
+          "CHOOSE_INFO": "Choose how you wish to make the payment",
+          "AMOUNT_TO_PAY": "Amount to Pay",
+          "TOTAL": "Total",
+          "PAID": "Paid",
+          "REMAINING": "Remaining",
+          "CHANGE": "Change",
+          "SECURE_TRANSCT": "Secure and protected transaction!",
+          "PLACE_HOLDER": {
+            "STUDENT": "Select",
+            "RECEIVED_FROM": "Full Name",
+            "REGARDING_THE_PYMT": "Payment Type"
+          },
+          "ERROR": {
+            "STUDENT": "Select the student",
+            "RECEIVED_FROM": "Enter full name",
+            "REGARDING_THE_PYMT": "Enter payment type",
+            "TOTAL_TO_PAY": "Enter total amount"
+          },
+          "ACTIONS": {
+            "CONFIRM": "Confirm Details",
+            "CONFIRM_PAYMENT": "Confirm Payment",
+            "PAY_AFTER": "Pay Later",
+            "NEW_PAYMENT": "New Payment",
+            "BACK": "Back"
+          }
+        },
+        "SUCCESS": {
+          "TITLE": "Payment Confirmed!",
+          "INFO": "The transaction was processed successfully.",
+          "RECEIVED_FROM": "Received from",
+          "PAYMENT_FOR": "Regarding payment for",
+          "AMOUNT_PAID": "Amount paid",
+          "METHOD": "Method",
+          "DATE": "Date",
+          "TIME": "Time",
+          "RECEIPTS_AVAILABLE": "Receipts Available",
+          "DOWNLOAD_PDF": "Download PDF",
+          "DOWNLOAD_IMAGE": "Download Image",
+          "PRINT_RECEIPT": "Print Receipt"
+        }
+      },
+      "SETTINGS": {
+        "PROFILE": {
+          "TITLE": "My Profile",
+          "FULL_NAME": "Full Name",
+          "USERNAME": "Username",
+          "PHONE_NUMBER": "Contact",
+          "ROLE": "Access Level",
+          "STATUS": "Status",
+          "CREATED_AT": "Created on"
+        },
+        "NOTIFICATIONS": {
+          "TITLE": "Notifications",
+          "NOTF_1": {
+            "TITLE": "Low Stock Alerts",
+            "INFO": "Receive notifications when products fall below minimum stock."
+          },
+          "NOTF_2": {
+            "TITLE": "New Sales",
+            "INFO": "Notify about sales made at POS."
+          },
+          "NOTF_3": {
+            "TITLE": "Expired Products",
+            "INFO": "Alerts for products that have already expired."
+          },
+          "NOTF_4": {
+            "TITLE": "Products Nearing Expiry",
+            "INFO": "Alerts for products approaching expiry."
+          },
+          "NOTF_5": {
+            "TITLE": "Out of Stock Products",
+            "INFO": "Notification when a product is completely out of stock."
+          },
+          "NOTF_6": {
+            "TITLE": "New Customer Registered",
+            "INFO": "Receive notification whenever a new customer is registered."
+          },
+          "NOTF_7": {
+            "TITLE": "Product Price Changes",
+            "INFO": "Receive alerts when product prices are updated."
+          },
+          "NOTF_8": {
+            "TITLE": "System or Server Error",
+            "INFO": "Immediate warning in case of critical technical failures."
+          },
+          "NOTF_9": {
+            "TITLE": "System Updates",
+            "INFO": "Receive information about new updates available."
+          }
+        },
+        "SECURITY": {
+          "TITLE": "Security",
+          "LABEL": {
+            "CURRENT": "Current password",
+            "NEW": "New password",
+            "CONFIRM_NEW": "Confirm new password"
+          },
+          "ERROR": {
+            "CURRENT": "Please enter current password",
+            "NEW": "Please enter new password",
+            "CONFIRM_NEW": "Please confirm new password",
+            "PASSWORD_TOO_SHORT": "Current password incorrect. Please try again",
+            "NEW_PASSWORD_TOO_SHORT": "New password must be at least 6 characters",
+            "CONFIRM_PASSWORD_TOO_SHORT": "New password confirmation must be at least 6 characters",
+            "MISMATCH": "New passwords do not match"
+          }
+        },
+        "APPARENCE": {
+          "TITLE": "Appearance"
+        },
+        "PAYMENT_METHOD": {
+          "TITLE": "Payment Methods"
+        },
+        "LICENCE": {
+          "TITLE": "Licence"
+        }
+      }
+    }
+  },
+
+  "MESSAGE_TOAST": {
+    "INFO": {
+      "SUMMARY": "Information"
+    },
+    "SUCCESS": {
+      "SUMMARY": "Success",
+      "DETAIL": {
+        "DEFAULT": "Operation completed successfully.",
+        "FINANCIAL": {
+          "ACC_CREATED": "Account created successfully.",
+          "ACC_ON_CANCEL": "Account cancelled successfully.",
+          "ACC_CONFIRM_PAYABLE": "Payment confirmed successfully. Account updated.",
+          "ACC_BALANCE_TRANSFER_SUCCESS": "Transfer completed successfully."
+        }
+      }
+    },
+    "WARN": {
+      "SUMMARY": "Warning"
+    },
+    "ERROR": {
+      "SUMMARY": "Error",
+      "DETAIL": {
+        "OTHERS": {
+          "DEFAULT": "Something went wrong. Please try again.",
+          "IDENTITY_NOT_RECOGNIZED": "Could not recognise identity.",
+          "ORIGIN_DESTINATION_SAME": "Origin account cannot be the same as destination account."
+        },
+        "SERVER": {
+          "UNEXPECTED": "An unexpected error occurred. Please try again later.",
+          "NO_CONNECTION": "Unable to connect to server. Check your internet or try later.",
+          "INVALID_DATA": "Submitted data is incorrect. Check fields and try again.",
+          "SESSION_EXPIRED": "Your session has expired or you lack authorisation. Please log in again.",
+          "NO_PERMISSION": "You do not have permission to perform this action. Contact admin if you believe this is an error.",
+          "NOT_FOUND": "What you are looking for was not found. It may have been removed or the address is incorrect.",
+          "TIMEOUT": "Operation took too long. Please try again.",
+          "DUPLICATE": "A duplicate record already exists. Check the data.",
+          "VALIDATION": "Some data is invalid. Correct highlighted fields and try again.",
+          "TOO_MANY_ATTEMPTS": "Too many attempts. Wait a few minutes and try again.",
+          "SERVER_PROBLEM": "Server problem occurred. Team has been notified. Try later.",
+          "SERVER_UNAVAILABLE": "Server temporarily unavailable. Try again shortly.",
+          "SERVER_SLOW": "Server response too slow. Check connection and try again.",
+          "OPERATION_CODE": "Operation error occurred. Try again.",
+          "SERVER": "Server problem occurred. Try later.",
+          "OPERATION_TIMEOUT": "Operation timed out. Check internet and try again.",
+          "NO_INTERNET": "No internet connection. Check connection and try again.",
+          "PAGE": "Page problem occurred. Refresh page (F5) and try again."
+        }
+      }
+    },
+    "SECONDARY": {
+      "SUMMARY": "Note"
+    },
+    "CONTRAST": {
+      "SUMMARY": "Highlight"
+    }
+  }
+}

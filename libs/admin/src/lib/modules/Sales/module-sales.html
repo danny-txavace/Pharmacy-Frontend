@@ -1,0 +1,67 @@
+<section>
+  <p-tabs value="Overview">
+    <p-tablist>
+      <p-tab value="Overview"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-sitemap', label: 'ADMIN.CENTRE.SALES.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.SALES.TABLIST.OVERVIEW' }
+        ])"
+      >
+        <i class="pi pi-chart-line"></i>
+        <span>{{ 'ADMIN.CENTRE.SALES.TABLIST.OVERVIEW' | translate }}</span>
+      </p-tab>
+
+      <p-tab value="Success"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-sitemap', label: 'ADMIN.CENTRE.SALES.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.SALES.TABLIST.SUCCESS' }
+        ])"
+      >
+        <i class="pi pi-check-circle"></i>
+        <span>{{ 'ADMIN.CENTRE.SALES.TABLIST.SUCCESS' | translate }}</span>
+      </p-tab>
+
+      <p-tab value="Pending"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-sitemap', label: 'ADMIN.CENTRE.SALES.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.SALES.TABLIST.PENDING' }
+        ])"
+      >
+        <i class="pi pi-pause-circle"></i>
+        <span>{{ 'ADMIN.CENTRE.SALES.TABLIST.PENDING' | translate }}</span>
+      </p-tab>
+
+      <p-tab value="Cancelled"
+        class="flex items-center gap-2"
+        (click)="navigateTo([
+          { is_button: false, icon: 'pi-sitemap', label: 'ADMIN.CENTRE.SALES.TITLE' },
+          { is_button: false, label: 'ADMIN.CENTRE.SALES.TABLIST.CANCELLED' }
+        ])"
+      >
+        <i class="pi pi-times-circle"></i>
+        <span>{{ 'ADMIN.CENTRE.SALES.TABLIST.CANCELLED' | translate }}</span>
+      </p-tab>
+    </p-tablist>
+
+    <p-tabpanels>
+      <p-tabpanel value="Overview">
+        <lib-layout-sales-overview></lib-layout-sales-overview>
+      </p-tabpanel>
+
+      <p-tabpanel value="Success">
+        <lib-layout-sales-success></lib-layout-sales-success>
+      </p-tabpanel>
+
+      <p-tabpanel value="Pending">
+        <lib-layout-sales-pending></lib-layout-sales-pending>
+      </p-tabpanel>
+
+      <p-tabpanel value="Cancelled">
+        <lib-layout-sales-cancelled></lib-layout-sales-cancelled>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</section>
